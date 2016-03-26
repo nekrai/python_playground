@@ -1,2 +1,2 @@
 def run_tests(config):
-	print '|' + config['test1'] + '|'
+	print '|' + config['nunit_version'] + '|'
