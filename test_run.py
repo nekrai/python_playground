@@ -1,2 +1,4 @@
-def run_tests(config):
+def run_tests(config, str):
+	print str
 	print config
+	
