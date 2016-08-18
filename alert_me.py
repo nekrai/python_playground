@@ -5,7 +5,7 @@ def alert(a_number):
 
 def fetch_message(a_number):
     if a_number == 1:
-        return 'green alert!'
+        return 'greenish alert!'
     elif a_number == 2:
         return 'yellow alert!'
     else:
