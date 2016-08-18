@@ -1,34 +1,31 @@
 import unittest
 import alert_me
+from mock import MagicMock
 
 
 class TestAlert(unittest.TestCase):
 
-    def tearDown(self):
-        print self.lol
+    vals = {1: 'test1', 2: 'test2'}
 
-    def mock_print(self, message):
-        self.was_called = True
-        self.with_message = message
-
-        if self.test_case == 1:
-            self.lol = 'potatoes'
-        elif self.test_case == 2:
-            self.lol = 'fiambre'
+    def side_effect(self, args):
+        return self.vals[args]
 
     def test_alert_default(self):
-        self.test_case = 1
-        alert_me.print_message = self.mock_print
-        alert_me.alert()
-        self.assertTrue(self.was_called)
-        self.assertEqual('alert!', self.with_message)
+        # arrange
+        alert_me.print_message = MagicMock()
+        # act
+        alert_me.alert(1)
+        # assert
+        alert_me.print_message.assert_called_once_with('green alert!')
 
     def test_alert_with_message(self):
-        self.test_case = 2
-        alert_me.print_message = self.mock_print
-        alert_me.alert('bla')
-        self.assertTrue(self.was_called)
-        self.assertEqual('bla', self.with_message)
+        # arrange
+        alert_me.print_message = MagicMock()
+        alert_me.fetch_message = MagicMock(side_effect=self.side_effect)
+        # act
+        alert_me.alert(1)
+        # assert
+        alert_me.print_message.assert_called_once_with('test1')
 
 
 
