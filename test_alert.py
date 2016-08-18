@@ -5,7 +5,7 @@ from mock import MagicMock
 
 class TestAlert(unittest.TestCase):
 
-    _mocked_values = {1: 'test1', 2: 'test2'}
+    _mocked_values = {1: 'mocked value 1', 2: 'mocked value 2'}
 
     def mock_fetch_message(self, args):
         return self._mocked_values[args]
@@ -25,7 +25,7 @@ class TestAlert(unittest.TestCase):
         # act
         alert_me.alert(1)
         # assert
-        alert_me.print_message.assert_called_once_with('test1')
+        alert_me.print_message.assert_called_once_with(self._mocked_values[1])
 
 
 
