@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3556b13-b9f5-4002-812c-26259e0280a9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/split_tests.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test_split.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/split_tests.py" afterPath="$PROJECT_DIR$/split_tests.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_split.py" afterPath="$PROJECT_DIR$/test_split.py" />
     </list>
     <ignored path="theone.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,7 +37,7 @@
       <file leaf-file-name="test_alert.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_alert.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
+            <state relative-caret-position="170">
               <caret line="12" column="31" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="31" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
@@ -46,39 +46,57 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="split_tests.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="split_tests.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/split_tests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state relative-caret-position="204">
+              <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
               <folding>
-                <element signature="e#159#228#0" expanded="false" />
-                <element signature="e#387#742#0" expanded="false" />
-                <element signature="e#790#1568#0" expanded="false" />
+                <element signature="e#75#167#0" expanded="false" />
+                <element signature="e#205#274#0" expanded="false" />
+                <element signature="e#331#511#0" expanded="false" />
+                <element signature="e#561#1220#0" expanded="false" />
+                <element signature="e#1268#2154#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_split.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test_split.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_split.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+            <state relative-caret-position="1105">
+              <caret line="198" column="50" selection-start-line="198" selection-start-column="50" selection-end-line="198" selection-end-column="50" />
               <folding>
-                <element signature="e#0#13#0" expanded="true" />
-                <element signature="e#282#474#0" expanded="false" />
-                <element signature="e#529#733#0" expanded="false" />
-                <element signature="e#865#967#0" expanded="false" />
-                <element signature="e#1019#1205#0" expanded="false" />
-                <element signature="e#1259#1462#0" expanded="false" />
-                <element signature="e#2369#2603#0" expanded="false" />
-                <element signature="e#2671#2915#0" expanded="false" />
-                <element signature="e#2985#3293#0" expanded="false" />
-                <element signature="e#3358#3618#0" expanded="false" />
-                <element signature="e#3696#4020#0" expanded="false" />
-                <element signature="e#4099#4423#0" expanded="false" />
-                <element signature="e#4501#4825#0" expanded="false" />
+                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#277#387#0" expanded="false" />
+                <element signature="e#425#627#0" expanded="false" />
+                <element signature="e#667#881#0" expanded="false" />
+                <element signature="e#1003#1115#0" expanded="false" />
+                <element signature="e#1160#1355#0" expanded="false" />
+                <element signature="e#1403#1615#0" expanded="false" />
+                <element signature="e#1776#1912#0" expanded="false" />
+                <element signature="e#1953#2073#0" expanded="false" />
+                <element signature="e#2118#2299#0" expanded="false" />
+                <element signature="e#2350#2566#0" expanded="false" />
+                <element signature="e#2614#2830#0" expanded="false" />
+                <element signature="e#2875#3091#0" expanded="false" />
+                <element signature="e#3224#3408#0" expanded="false" />
+                <element signature="e#3459#3758#0" expanded="false" />
+                <element signature="e#3812#4114#0" expanded="false" />
+                <element signature="e#4168#4412#0" expanded="false" />
+                <element signature="e#4463#4723#0" expanded="false" />
+                <element signature="e#4779#5087#0" expanded="false" />
+                <element signature="e#5151#5475#0" expanded="false" />
+                <element signature="e#5540#5864#0" expanded="false" />
+                <element signature="e#5928#6252#0" expanded="false" />
+                <element signature="e#6313#6599#0" expanded="false" />
+                <element signature="e#6728#6839#0" expanded="false" />
+                <element signature="e#6889#7106#0" expanded="false" />
+                <element signature="e#7159#7408#0" expanded="false" />
+                <element signature="e#7463#7780#0" expanded="false" />
+                <element signature="e#7830#8267#0" expanded="false" />
+                <element signature="e#8323#8773#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -111,7 +129,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1692" />
+    <option name="width" value="1696" />
     <option name="height" value="1036" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -139,7 +157,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -160,31 +177,15 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/alert_me.py" />
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in test_split">
-    <configuration default="false" name="the_app" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="theone" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/the_app.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittests in test_alert" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Unittest TestFixTestList.test_single_test_goes_for_first_job">
+    <configuration default="false" name="Unittest TestSplitTests.test_many_tests_multiple_jobs" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -194,55 +195,60 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="theone" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_alert.py" />
-      <option name="CLASS_NAME" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_split.py" />
+      <option name="CLASS_NAME" value="TestSplitTests" />
+      <option name="METHOD_NAME" value="test_many_tests_multiple_jobs" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestSplitTests.test_preserves_total_test_time" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="theone" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_split.py" />
+      <option name="CLASS_NAME" value="TestSplitTests" />
+      <option name="METHOD_NAME" value="test_preserves_total_test_time" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in TestSplitTests" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="theone" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_split.py" />
+      <option name="CLASS_NAME" value="TestSplitTests" />
       <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <option name="PUREUNITTEST" value="true" />
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittests in theone" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="theone" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="$PROJECT_DIR$" />
-      <option name="TEST_TYPE" value="TEST_FOLDER" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="split_tests" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="theone" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/split_tests.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
     <configuration default="false" name="Unittests in test_split" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
@@ -260,6 +266,28 @@
       <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestFixTestList.test_single_test_goes_for_first_job" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="theone" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_split.py" />
+      <option name="CLASS_NAME" value="TestFixTestList" />
+      <option name="METHOD_NAME" value="test_single_test_goes_for_first_job" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <option name="PUREUNITTEST" value="true" />
@@ -402,19 +430,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.the_app" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in test_alert" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in theone" />
-      <item index="3" class="java.lang.String" itemvalue="Python.split_tests" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in test_split" />
+      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestSplitTests.test_many_tests_multiple_jobs" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestSplitTests.test_preserves_total_test_time" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestSplitTests" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in test_split" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestFixTestList.test_single_test_goes_for_first_job" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in test_split" />
-        <item index="1" class="java.lang.String" itemvalue="Python.split_tests" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in test_alert" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in theone" />
-        <item index="4" class="java.lang.String" itemvalue="Python.the_app" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestFixTestList.test_single_test_goes_for_first_job" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in test_split" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestSplitTests" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestSplitTests.test_preserves_total_test_time" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestSplitTests.test_many_tests_multiple_jobs" />
       </list>
     </recent_temporary>
   </component>
@@ -495,56 +523,63 @@
       <option name="project" value="LOCAL" />
       <updated>1471560438532</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="greenish">
+      <created>1471800931811</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1471800931811</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_test_split - 2016.08.21 at 17h 06m 55s.xml">
+    <history-entry file="Unittest_TestFixTestList_test_single_test_goes_for_first_job - 2016.08.22 at 22h 37m 31s.xml">
+      <configuration name="Unittest TestFixTestList.test_single_test_goes_for_first_job" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestSplitTests_test_preserves_total_test_time - 2016.08.22 at 22h 26m 31s.xml">
+      <configuration name="Unittest TestSplitTests.test_preserves_total_test_time" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestSplitTests_test_preserves_total_test_time - 2016.08.22 at 22h 26m 36s.xml">
+      <configuration name="Unittest TestSplitTests.test_preserves_total_test_time" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestSplitTests_test_preserves_total_test_time - 2016.08.22 at 22h 26m 37s.xml">
+      <configuration name="Unittest TestSplitTests.test_preserves_total_test_time" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_TestSplitTests - 2016.08.22 at 22h 26m 43s.xml">
+      <configuration name="Unittests in TestSplitTests" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_split - 2016.08.22 at 22h 28m 48s.xml">
       <configuration name="Unittests in test_split" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_split - 2016.08.21 at 17h 07m 31s.xml">
+    <history-entry file="Unittests_in_test_split - 2016.08.22 at 22h 32m 22s.xml">
       <configuration name="Unittests in test_split" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_split - 2016.08.21 at 17h 10m 07s.xml">
+    <history-entry file="Unittests_in_test_split - 2016.08.22 at 22h 32m 47s.xml">
       <configuration name="Unittests in test_split" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_split - 2016.08.21 at 17h 11m 36s.xml">
+    <history-entry file="Unittests_in_test_split - 2016.08.22 at 22h 32m 49s.xml">
       <configuration name="Unittests in test_split" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_split - 2016.08.21 at 17h 13m 37s.xml">
-      <configuration name="Unittests in test_split" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_split - 2016.08.21 at 17h 13m 55s.xml">
-      <configuration name="Unittests in test_split" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_split - 2016.08.21 at 17h 15m 05s.xml">
-      <configuration name="Unittests in test_split" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_split - 2016.08.21 at 17h 24m 58s.xml">
-      <configuration name="Unittests in test_split" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_split - 2016.08.21 at 17h 29m 45s.xml">
-      <configuration name="Unittests in test_split" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_split - 2016.08.21 at 17h 34m 19s.xml">
+    <history-entry file="Unittests_in_test_split - 2016.08.22 at 22h 32m 50s.xml">
       <configuration name="Unittests in test_split" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1692" height="1036" extended-state="0" />
+    <frame x="-8" y="-8" width="1696" height="1036" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19749403" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15178572" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3265086" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39978448" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -574,11 +609,81 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/alert_me.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_alert.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/split_tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="27" column="42" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="42" />
+          <folding>
+            <element signature="e#75#167#0" expanded="false" />
+            <element signature="e#205#274#0" expanded="false" />
+            <element signature="e#331#511#0" expanded="false" />
+            <element signature="e#561#1220#0" expanded="false" />
+            <element signature="e#1268#2154#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_split.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#277#387#0" expanded="false" />
+            <element signature="e#425#627#0" expanded="false" />
+            <element signature="e#667#881#0" expanded="false" />
+            <element signature="e#1003#1115#0" expanded="false" />
+            <element signature="e#1160#1355#0" expanded="false" />
+            <element signature="e#1403#1615#0" expanded="false" />
+            <element signature="e#1776#1912#0" expanded="false" />
+            <element signature="e#1953#2073#0" expanded="false" />
+            <element signature="e#2118#2299#0" expanded="false" />
+            <element signature="e#2350#2566#0" expanded="false" />
+            <element signature="e#2614#2830#0" expanded="false" />
+            <element signature="e#2875#3091#0" expanded="false" />
+            <element signature="e#3224#3408#0" expanded="false" />
+            <element signature="e#3459#3758#0" expanded="false" />
+            <element signature="e#3812#4114#0" expanded="false" />
+            <element signature="e#4168#4412#0" expanded="false" />
+            <element signature="e#4463#4723#0" expanded="false" />
+            <element signature="e#4779#5087#0" expanded="false" />
+            <element signature="e#5151#5475#0" expanded="false" />
+            <element signature="e#5540#5864#0" expanded="false" />
+            <element signature="e#5928#6252#0" expanded="false" />
+            <element signature="e#6313#6599#0" expanded="false" />
+            <element signature="e#6728#6839#0" expanded="false" />
+            <element signature="e#6889#7106#0" expanded="false" />
+            <element signature="e#7159#7408#0" expanded="false" />
+            <element signature="e#7463#7780#0" expanded="false" />
+            <element signature="e#7830#8267#0" expanded="false" />
+            <element signature="e#8323#8773#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/alert_me.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -677,7 +782,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test_alert.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="170">
           <caret line="12" column="31" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="31" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
@@ -685,36 +790,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_split.py">
+    <entry file="file://$PROJECT_DIR$/split_tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+        <state relative-caret-position="204">
+          <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#282#474#0" expanded="false" />
-            <element signature="e#529#733#0" expanded="false" />
-            <element signature="e#865#967#0" expanded="false" />
-            <element signature="e#1019#1205#0" expanded="false" />
-            <element signature="e#1259#1462#0" expanded="false" />
-            <element signature="e#2369#2603#0" expanded="false" />
-            <element signature="e#2671#2915#0" expanded="false" />
-            <element signature="e#2985#3293#0" expanded="false" />
-            <element signature="e#3358#3618#0" expanded="false" />
-            <element signature="e#3696#4020#0" expanded="false" />
-            <element signature="e#4099#4423#0" expanded="false" />
-            <element signature="e#4501#4825#0" expanded="false" />
+            <element signature="e#75#167#0" expanded="false" />
+            <element signature="e#205#274#0" expanded="false" />
+            <element signature="e#331#511#0" expanded="false" />
+            <element signature="e#561#1220#0" expanded="false" />
+            <element signature="e#1268#2154#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/split_tests.py">
+    <entry file="file://$PROJECT_DIR$/test_split.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state relative-caret-position="1105">
+          <caret line="198" column="50" selection-start-line="198" selection-start-column="50" selection-end-line="198" selection-end-column="50" />
           <folding>
-            <element signature="e#159#228#0" expanded="false" />
-            <element signature="e#387#742#0" expanded="false" />
-            <element signature="e#790#1568#0" expanded="false" />
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#277#387#0" expanded="false" />
+            <element signature="e#425#627#0" expanded="false" />
+            <element signature="e#667#881#0" expanded="false" />
+            <element signature="e#1003#1115#0" expanded="false" />
+            <element signature="e#1160#1355#0" expanded="false" />
+            <element signature="e#1403#1615#0" expanded="false" />
+            <element signature="e#1776#1912#0" expanded="false" />
+            <element signature="e#1953#2073#0" expanded="false" />
+            <element signature="e#2118#2299#0" expanded="false" />
+            <element signature="e#2350#2566#0" expanded="false" />
+            <element signature="e#2614#2830#0" expanded="false" />
+            <element signature="e#2875#3091#0" expanded="false" />
+            <element signature="e#3224#3408#0" expanded="false" />
+            <element signature="e#3459#3758#0" expanded="false" />
+            <element signature="e#3812#4114#0" expanded="false" />
+            <element signature="e#4168#4412#0" expanded="false" />
+            <element signature="e#4463#4723#0" expanded="false" />
+            <element signature="e#4779#5087#0" expanded="false" />
+            <element signature="e#5151#5475#0" expanded="false" />
+            <element signature="e#5540#5864#0" expanded="false" />
+            <element signature="e#5928#6252#0" expanded="false" />
+            <element signature="e#6313#6599#0" expanded="false" />
+            <element signature="e#6728#6839#0" expanded="false" />
+            <element signature="e#6889#7106#0" expanded="false" />
+            <element signature="e#7159#7408#0" expanded="false" />
+            <element signature="e#7463#7780#0" expanded="false" />
+            <element signature="e#7830#8267#0" expanded="false" />
+            <element signature="e#8323#8773#0" expanded="false" />
           </folding>
         </state>
       </provider>

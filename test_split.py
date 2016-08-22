@@ -1,6 +1,6 @@
-import random
 import unittest
 import split_tests
+import random
 
 
 def create_test_element(x, set_time): return {'name': 'test' + str(x), 'time': str(set_time())}
@@ -9,99 +9,140 @@ def create_test_element(x, set_time): return {'name': 'test' + str(x), 'time': s
 class TestInitTestList(unittest.TestCase):
     # def init_test_list(number_jobs)
 
-    def test_init_test_list_one_job(self):
+    def test_less_than_one_job(self):
+        # act
+        obtained = split_tests.init_test_list(0)
+        # assert
+        self.assertEqual([], obtained)
+
+    def test_one_job(self):
         # arrange
         t = split_tests.init_job_tests(0)
         expected = [t, t]
         # act
-        res = split_tests.init_test_list(1)
+        obtained = split_tests.init_test_list(1)
         # assert
-        self.assertEqual(expected, res)
+        self.assertEqual(expected, obtained)
 
-    def test_init_test_list_five_jobs(self):
+    def test_five_jobs(self):
         # arrange
         t = split_tests.init_job_tests(0)
         expected = [t, t, t, t, t, t]
         # act
-        res = split_tests.init_test_list(5)
+        obtained = split_tests.init_test_list(5)
         # assert
-        self.assertEqual(expected, res)
+        self.assertEqual(expected, obtained)
 
 
 class TestGetTotalTime(unittest.TestCase):
     # def get_total_time(test_list)
 
-    def test_get_total_time_empty(self):
+    def test_empty_list(self):
         # act
-        res = split_tests.get_total_time([])
+        obtained = split_tests.get_total_time([])
         # assert
-        self.assertEqual(0.0, res)
+        self.assertEqual(0.0, obtained)
 
-    def test_get_total_time_single(self):
+    def test_single_element(self):
         # arrange
-        test_list = [create_test_element(1, lambda : 5.0)]
+        test_list = [create_test_element(1, lambda: 5.0)]
         # act
-        res = split_tests.get_total_time(test_list)
+        obtained = split_tests.get_total_time(test_list)
         # assert
-        self.assertEqual(5.0, res)
+        self.assertEqual(5.0, obtained)
 
-    def test_get_total_time_multiple(self):
+    def test_multiple_elements(self):
         # arrange
-        test_list = [create_test_element(x, lambda : x) for x in range(5)]
+        test_list = [create_test_element(x, lambda: x) for x in range(5)]
         # act
-        res = split_tests.get_total_time(test_list)
+        obtained = split_tests.get_total_time(test_list)
         # assert
-        self.assertEqual(10.0, res)
+        self.assertEqual(10.0, obtained)
 
 
 class TestGetMinimalPosition(unittest.TestCase):
     # def get_minimal_position(test_list, number_jobs)
 
-    def test_get_minimal_position_empty(self):
-        # arrange
+    def test_number_is_greater_than_1(self):
         # act
+        obtained = split_tests.get_minimal_position([(1, []), (1, [])], 0)
         # assert
-        self.assertTrue(False)
+        self.assertEqual(-3, obtained)
 
-    def test_get_minimal_position_single(self):
-        # arrange
+    def test_empty_list(self):
         # act
+        obtained = split_tests.get_minimal_position([], 1)
         # assert
-        self.assertTrue(False)
+        self.assertEqual(-1, obtained)
 
-    def test_get_minimal_position_many_beginning(self):
+    def test_single_element(self):
         # arrange
+        testing_list = [(0, [])]
         # act
+        obtained = split_tests.get_minimal_position(testing_list, 1)
         # assert
-        self.assertTrue(False)
+        self.assertEqual(-2, obtained)
 
-    def test_get_minimal_position_many_middle(self):
+    def test_minimal_in_beginning(self):
         # arrange
+        testing_list = [(1, []), (2, []), (3, []), (4, []), (0, [])]
         # act
+        obtained = split_tests.get_minimal_position(testing_list, 4)
         # assert
-        self.assertTrue(False)
+        self.assertEqual(0, obtained)
 
-    def test_get_minimal_position_many_end(self):
+    def test_minimal_in_middle(self):
         # arrange
+        testing_list = [(2, []), (1, []), (3, []), (4, []), (0, [])]
         # act
+        obtained = split_tests.get_minimal_position(testing_list, 4)
         # assert
-        self.assertTrue(False)
+        self.assertEqual(1, obtained)
+
+    def test_minimal_in_end(self):
+        # arrange
+        testing_list = [(3, []), (2, []), (1, []), (4, []), (0, [])]
+        # act
+        obtained = split_tests.get_minimal_position(testing_list, 4)
+        # assert
+        self.assertEqual(2, obtained)
 
 
 class TestFixTestList(unittest.TestCase):
     # def fix_test_list(test_list, number_jobs)
 
-    def test_fix_test_list_empty(self):
+    def test_empty_list(self):
         # arrange
-        t = split_tests.init_job_tests(0)
-        init_list = [t, t]
-        final_list = [t, t]
+        init_list = []
+        final_list = []
         # act
         split_tests.fix_test_list(final_list, 1)
         # assert
         self.assertEqual(init_list, final_list)
 
-    def test_fix_test_list_single_without_overload(self):
+    def test_exception_short_list(self):
+        # arrange
+        t = split_tests.init_job_tests(0)
+        testing_list = [t]
+        num_jobs = 1
+        # assert
+        with self.assertRaises(Exception) as context:
+            split_tests.fix_test_list(testing_list, num_jobs)
+
+        self.assertTrue('Invalid arguments' in context.exception)
+
+    def test_exception_too_many_jobs(self):
+        # arrange
+        t = split_tests.init_job_tests(0)
+        testing_list = [t, t]
+        num_jobs = 5
+        # assert
+        with self.assertRaises(Exception) as context:
+            split_tests.fix_test_list(testing_list, num_jobs)
+
+        self.assertTrue('Invalid arguments' in context.exception)
+
+    def test_single_without_overload(self):
         # arrange
         testing_list = [(1, ['test1']), (0, [])]
         expected_list = [(1, ['test1']), (0, [])]
@@ -110,16 +151,7 @@ class TestFixTestList(unittest.TestCase):
         # assert
         self.assertEqual(expected_list, testing_list)
 
-    def test_fix_test_list_multiple_without_overload(self):
-        # arrange
-        testing_list = [(1, ['test1']), (2, ['test2']), (3, ['test3']), (0, [])]
-        expected_list = [(1, ['test1']), (2, ['test2']), (3, ['test3']), (0, [])]
-        # act
-        split_tests.fix_test_list(testing_list, 3)
-        # assert
-        self.assertEqual(expected_list, testing_list)
-
-    def test_fix_test_list_single_with_overload(self):
+    def test_single_with_overload(self):
         # arrange
         testing_list = [(1, ['test1']), (2, ['test2'])]
         expected_list = [(3, ['test1', 'test2']), (0, [])]
@@ -128,7 +160,16 @@ class TestFixTestList(unittest.TestCase):
         # assert
         self.assertEqual(expected_list, testing_list)
 
-    def test_fix_test_list_multiple_with_overload_first_slot(self):
+    def test_multiple_without_overload(self):
+        # arrange
+        testing_list = [(1, ['test1']), (2, ['test2']), (3, ['test3']), (0, [])]
+        expected_list = [(1, ['test1']), (2, ['test2']), (3, ['test3']), (0, [])]
+        # act
+        split_tests.fix_test_list(testing_list, 3)
+        # assert
+        self.assertEqual(expected_list, testing_list)
+
+    def test_multiple_with_overload_first_slot(self):
         # arrange
         testing_list = [(1, ['test1']), (2, ['test2']), (3, ['test3']), (4, ['test4'])]
         expected_list = [(5, ['test1', 'test4']), (2, ['test2']), (3, ['test3']), (0, [])]
@@ -137,7 +178,7 @@ class TestFixTestList(unittest.TestCase):
         # assert
         self.assertEqual(expected_list, testing_list)
 
-    def test_fix_test_list_multiple_with_overload_second_slot(self):
+    def test_multiple_with_overload_second_slot(self):
         # arrange
         testing_list = [(2, ['test2']), (1, ['test1']), (3, ['test3']), (4, ['test4'])]
         expected_list = [(2, ['test2']), (5, ['test1', 'test4']), (3, ['test3']), (0, [])]
@@ -146,7 +187,7 @@ class TestFixTestList(unittest.TestCase):
         # assert
         self.assertEqual(expected_list, testing_list)
 
-    def test_fix_test_list_multiple_with_overload_third_slot(self):
+    def test_multiple_with_overload_third_slot(self):
         # arrange
         testing_list = [(2, ['test2']), (3, ['test3']), (1, ['test1']), (4, ['test4'])]
         expected_list = [(2, ['test2']), (3, ['test3']), (5, ['test1', 'test4']), (0, [])]
@@ -155,49 +196,71 @@ class TestFixTestList(unittest.TestCase):
         # assert
         self.assertEqual(expected_list, testing_list)
 
+    def test_single_test_goes_for_first_job(self):
+        # arrange
+        t = split_tests.init_job_tests(0)
+        testing_list = [t, t, (1, ['test1']), t]
+        expected_list = [(1, ['test1']), t, t, t]
+        # act
+        split_tests.fix_test_list(testing_list, 3)
+        # assert
+        self.assertEqual(expected_list, testing_list)
 
 class TestSplitTests(unittest.TestCase):
     # def split_tests(test_list, number_jobs)
 
-    def test_split_tests_empty(self):
-        # arrange
+    def test_empty_list(self):
         # act
+        obtained = split_tests.split_tests([], 1)
         # assert
-        self.assertTrue(False)
+        self.assertEqual([], obtained)
 
-    def test_split_tests_one_test_single_job(self):
+    def test_one_test_single_job(self):
         # arrange
+        test_list = [create_test_element(1, lambda: 5.0)]
         # act
+        obtained = split_tests.split_tests(test_list, 1)
         # assert
-        self.assertTrue(False)
+        self.assertEqual([(5, ['test1']), (0, [])], obtained)
 
-    def test_split_tests_one_test_multiple_jobs(self):
+    def test_one_test_multiple_jobs(self):
         # arrange
+        test_list = [create_test_element(1, lambda: 5.0)]
         # act
+        obtained = split_tests.split_tests(test_list, 2)
+        print obtained
         # assert
-        self.assertTrue(False)
+        self.assertEqual([(5, ['test1']), (0, []), (0, [])], obtained)
 
-    def test_split_tests_many_tests_multiple_jobs(self):
+    def test_many_tests_multiple_jobs(self):
         # arrange
+        test_list = [create_test_element(x, lambda: x) for x in range(5)]
+        expected = [(3.0, ['test0', 'test1', 'test2']), (3.0, ['test3']), (4.0, ['test4']), (0, [])]
         # act
+        obtained = split_tests.split_tests(test_list, 3)
         # assert
-        self.assertTrue(False)
+        self.assertEqual(expected, obtained)
 
-    def test_split_tests_preserve_test_list(self):
+    def test_preserves_test_list(self):
         # arrange
+        test_list = [create_test_element(x, lambda: random.uniform(1, 10)) for x in range(100)]
+        tests_names_expected = [test.values()[0] for test in test_list].sort()
         # act
+        obtained = split_tests.split_tests(test_list, 5)
+        tests_names_obtained = [test_name for test in obtained for test_name in test[1]].sort()
         # assert
-        self.assertTrue(False)
+        self.assertEqual(tests_names_expected, tests_names_obtained)
 
-    def test_split_tests_preserve_total_test_time(self):
+    def test_preserves_total_test_time(self):
         # arrange
+        test_list = [create_test_element(x, lambda: random.uniform(1, 10)) for x in range(100)]
+        total_time_expected = int(sum([float(test.values()[1]) for test in test_list])*1000)/1000.0
         # act
+        obtained = split_tests.split_tests(test_list, 5)
+        total_time_obtained = int(sum([float(test[0]) for test in obtained])*1000)/1000.0
         # assert
-        self.assertTrue(False)
+        self.assertEqual(total_time_expected, total_time_obtained)
 
 
 if __name__ == '__main__':
     unittest.main()
-
-
-
