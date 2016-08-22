@@ -228,7 +228,6 @@ class TestSplitTests(unittest.TestCase):
         test_list = [create_test_element(1, lambda: 5.0)]
         # act
         obtained = split_tests.split_tests(test_list, 2)
-        print obtained
         # assert
         self.assertEqual([(5, ['test1']), (0, []), (0, [])], obtained)
 
