@@ -206,6 +206,7 @@ class TestFixTestList(unittest.TestCase):
         # assert
         self.assertEqual(expected_list, testing_list)
 
+
 class TestSplitTests(unittest.TestCase):
     # def split_tests(test_list, number_jobs)
 
