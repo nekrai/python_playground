@@ -1,5 +1,5 @@
 {
-  "name": "AddedVars",
+  "name": "Second",
     "environment_variables": [
         {
             "name": "BATCH_SIZE",
@@ -33,12 +33,23 @@
         }
     ],
   "group" : "QA",
-  "materials": [
-    {
-      "url": "https://github.com/tomzo/gocd-json-config-example.git",
-      "type": "git"
-    }
-  ],
+    "materials": [
+        {
+			"auto_update": true,
+			"check_externals": false,
+			"destination": "ContinuousIntegration",
+			"encrypted_password": "ZS+3XG45Xck=",
+			"filter": {
+				"ignore": [
+					"tools/**/*"
+				]
+			},
+			"name": "ContinuousIntegration",
+			"url": "https://srvptsvn.domain.outsystems.com/svn/rd/tools/branches/BuildPipeline_DEV/CINTIA",
+			"username": "extracvs",
+            "type": "svn"
+        }
+    ],
   "stages": [
     {
       "name": "build",
