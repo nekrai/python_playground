@@ -126,7 +126,7 @@
                                     "passed"
                                 ]
                             },
-                            "type": "pluggable_task"
+                            "type": "plugin"
                         },
                         {
                             "attributes": {
@@ -145,7 +145,7 @@
                                     "passed"
                                 ]
                             },
-                            "type": "pluggable_task"
+                            "type": "plugin"
                         },
                         {
                             "attributes": {
@@ -164,7 +164,7 @@
                                     "passed"
                                 ]
                             },
-                            "type": "pluggable_task"
+                            "type": "plugin"
                         },
                         {
                             "attributes": {
@@ -183,7 +183,7 @@
                                     "passed"
                                 ]
                             },
-                            "type": "pluggable_task"
+                            "type": "plugin"
                         },
                         {
                             "attributes": {
@@ -202,7 +202,7 @@
                                     "failed"
                                 ]
                             },
-                            "type": "pluggable_task"
+                            "type": "plugin"
                         }
                     ],
                     "timeout": 30
@@ -363,7 +363,7 @@
                                     "passed"
                                 ]
                             },
-                            "type": "pluggable_task"
+                            "type": "plugin"
                         },
                         {
                             "attributes": {
@@ -652,7 +652,7 @@
                                     "passed"
                                 ]
                             },
-                            "type": "pluggable_task"
+                            "type": "plugin"
                         },
                         {
                             "attributes": {
@@ -671,7 +671,7 @@
                                     "passed"
                                 ]
                             },
-                            "type": "pluggable_task"
+                            "type": "plugin"
                         },
                         {
                             "attributes": {
@@ -690,7 +690,7 @@
                                     "passed"
                                 ]
                             },
-                            "type": "pluggable_task"
+                            "type": "plugin"
                         },
                         {
                             "attributes": {
@@ -709,7 +709,7 @@
                                     "failed"
                                 ]
                             },
-                            "type": "pluggable_task"
+                            "type": "plugin"
                         }
                     ],
                     "timeout": 30
@@ -830,7 +830,7 @@
                                     "passed"
                                 ]
                             },
-                            "type": "pluggable_task"
+                            "type": "plugin"
                         },
                         {
                             "attributes": {
@@ -1084,7 +1084,7 @@
                                     "passed"
                                 ]
                             },
-                            "type": "pluggable_task"
+                            "type": "plugin"
                         },
                         {
                             "attributes": {
@@ -1188,7 +1188,7 @@
                                     "passed"
                                 ]
                             },
-                            "type": "pluggable_task"
+                            "type": "plugin"
                         },
                         {
                             "attributes": {
@@ -1222,7 +1222,7 @@
                                     "passed"
                                 ]
                             },
-                            "type": "pluggable_task"
+                            "type": "plugin"
                         },
                         {
                             "attributes": {
@@ -1241,7 +1241,7 @@
                                     "failed"
                                 ]
                             },
-                            "type": "pluggable_task"
+                            "type": "plugin"
                         },
                         {
                             "attributes": {
@@ -1260,7 +1260,7 @@
                                     "passed"
                                 ]
                             },
-                            "type": "pluggable_task"
+                            "type": "plugin"
                         },
                         {
                             "attributes": {
@@ -1279,7 +1279,7 @@
                                     "any"
                                 ]
                             },
-                            "type": "pluggable_task"
+                            "type": "plugin"
                         },
                         {
                             "attributes": {
@@ -1298,7 +1298,7 @@
                                     "any"
                                 ]
                             },
-                            "type": "pluggable_task"
+                            "type": "plugin"
                         }
                     ],
                     "timeout": 60
