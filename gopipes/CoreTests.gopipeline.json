@@ -39,21 +39,21 @@
     ],
     "materials": [
         {
-            "attributes": 
-			{
-                "auto_update": true,
-                "check_externals": false,
-                "destination": "b10_0_0",
-                "encrypted_password": "ZS+3XG45Xck=",
-                "filter": null,
-                "name": "PlatformCode",
-                "url": "https://srvptsvn.domain.outsystems.com/svn/rd/platform/branches/b10_0_0/",
-                "username": "extracvs"
-            },
-            "type": "svn"
+		
+  "url": "https://srvptsvn.domain.outsystems.com/svn/rd/platform/branches/b10_0_0/",
+  "username": "extracvs",
+  "check_externals": false,
+  "filter": null,
+  "destination": "b10_0_0",
+  "auto_update": false,
+  "name": "PlatformCode",
+  "encrypted_password": "ZS+3XG45Xck=",
+  "type": "svn"
+
+          
         },
         {
-            "attributes": {
+       
                 "auto_update": true,
                 "check_externals": false,
                 "destination": "ContinuousIntegration",
@@ -66,25 +66,23 @@
                 "name": "ContinuousIntegration",
                 "url": "https://srvptsvn.domain.outsystems.com/svn/rd/tools/branches/BuildPipeline_DEV/CINTIA",
                 "username": "extracvs"
-            },
             "type": "svn"
         },
         {
-            "attributes": {
                 "auto_update": true,
                 "name": "CINTIA_JAVA",
                 "pipeline": "NRTranslation",
                 "stage": "JavaTranslation"
-            },
+            
             "type": "dependency"
         },
         {
-            "attributes": {
+            
                 "auto_update": true,
                 "name": "CINTIA",
                 "pipeline": "NRBuild",
                 "stage": "PublishBuildToS3"
-            },
+            
             "type": "dependency"
         }
     ],
