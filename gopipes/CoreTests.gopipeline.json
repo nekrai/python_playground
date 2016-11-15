@@ -1,104 +1,37 @@
 {
-  "group": "QA",
-  "name": "NRCorePlatformTestsClone",
-  "label_template": "${COUNT}",
-  "enable_pipeline_locking": true,
-  "tracking_tool": null,
-  "timer": null,
-    "environment_variables": [
+  "name": "firstpipe",
+  "environment_variables": [],
+  "group" : "QA",
+  "materials": [
+    {
+      "url": "https://github.com/tomzo/gocd-json-config-example.git",
+      "type": "git"
+    }
+  ],
+  "stages": [
+    {
+      "name": "build",
+      "fetch_materials": true,
+      "never_cleanup_artifacts": false,
+      "clean_working_directory": false,
+      "environment_variables": [],
+      "jobs": [
         {
-            "name": "BATCH_SIZE",
-            "secure": false,
-            "value": "100"
-        },
-        {
-            "name": "OUTSYSTEMS_HOME_LINUX",
-            "secure": false,
-            "value": "/opt/outsystems/platform"
-        },
-        {
-            "name": "TESTS_JAVA_HOME",
-            "secure": false,
-            "value": "/etc/alternatives/java_sdk_1.8.0"
-        },
-        {
-            "name": "TESTS_CLASSPATH",
-            "secure": false,
-            "value": "./outsystems.hubedition.communication.jar:./outsystems.hubedition.pipeline.jar:./testscommon.jar:./javaservertests.jar:./runtimeplatform.unittests.jar:./outsystems.widgetsruntimeapi.jar:./servercommon.unittests.jar:./javaservertests.jar:./compilerservice.jar:./outsystems.packagemanager.jar:./configurationtool.jar:./deployservice.jar:./logserver.jar:./outsystems.viewframework.jar:./outsystems.hubedition.compiler.jar:./outsystems.clientruntime.jar:./outsystems.codegeneration.jar:./outsystems.modelplugins.jar:./outsystems.compilerapi.jar:./outsystems.compilerrestapi.jar:./plugins/compiler/*:./outsystems.activation.jar:./scheduler.jar:./scinstaller.jar:./outsystems.nosomlprocessor.jar:./junit-4.12.jar:./hamcrest-core-1.3.jar:./outsystems.junit.jar:./thirdparty/lib/*:/opt/outsystems/platform/lib/*:/opt/outsystems/platform/outsystems.hubedition.runtimeplatformutil.jar:/opt/outsystems/platform/outsystems.hubedition.runtimecommon.jar:/opt/outsystems/platform/outsystems.hubedition.common.jar:/opt/outsystems/platform/outsystems.hubedition.runtimeplatform.jar:/opt/outsystems/platform/outsystems.hubedition.databaseabstractionlayer.jar:/opt/outsystems/platform/plugins/database/*:/opt/outsystems/platform/plugins/database/internal/*:/opt/outsystems/platform/outsystems.hubedition.servercommon.jar:/opt/outsystems/platform/outsystems.runtimeservices.jar:/opt/outsystems/platform/lib/active.connectors/*:/etc/alternatives/java_sdk_1.8.0/lib/tools.jar:/opt/apache-ant-1.9.2/lib/ant.jar:./jackson-annotations.jar:./jackson-core.jar:./jackson-databind.jar:./javanrwidgets.karma.unittests.jar:./outsystems.rest.tests.jar:./outsystems.sap.tests.jar:./outsystems.plugin.viewframework.react.jar:./outsystems.plugin.viewframework.react.tests.jar:./outsystems.restservice.runtime.jar"
-        },
-        {
-            "name": "CI_PATH",
-            "secure": false,
-            "value": "/eSpace/QA/ContinuousIntegration/"
-        },
-        {
-            "name": "JACINTIA_WEB_SERVER",
-            "secure": false,
-            "value": "WILDFLY"
+          "name": "build",
+          "environment_variables": [],
+          "tabs": [],
+          "resources": [],
+          "artifacts": [],
+          "properties": [],
+          "run_instance_count": null,
+          "timeout": 0,
+          "tasks": [
+            {
+              "type": "rake"
+            }
+          ]
         }
-    ],
-    "materials": [
-        {
-			"auto_update": true,
-			"check_externals": false,
-			"destination": "ContinuousIntegration",
-			"encrypted_password": "ZS+3XG45Xck=",
-			"filter": {
-				"ignore": [
-					"tools/**/*"
-				]
-			},
-			"name": "ContinuousIntegration",
-			"url": "https://srvptsvn.domain.outsystems.com/svn/rd/tools/branches/BuildPipeline_DEV/CINTIA",
-			"username": "extracvs",
-            "type": "svn"
-        }
-    ],
-    "stages": [
-        {
-            "approval": {
-                "authorization": {
-                    "roles": [],
-                    "users": []
-                },
-                "type": "success"
-            },
-            "clean_working_directory": false,
-            "environment_variables": [],
-            "fetch_materials": true,
-            "jobs": [
-                {
-                    "artifacts": [],
-                    "environment_variables": [],
-                    "name": "Cleanup_Java",
-                    "properties": [],
-                    "resources": [
-                        "JACINTIA"
-                    ],
-                    "run_instance_count": "all",
-                    "tabs": [],
-                    "tasks": [
-                        {
-							"configuration": [
-								{
-									"key": "script",
-									"value": "cd ../pipelines/$GO_PIPELINE_NAME/ContinuousIntegration\r\n\r\nsource /opt/rh/python27/enable\r\n\r\npython create_event.py $GO_REVISION_PLATFORMCODE $BRANCH_NAME CorePlatform Cleanup --start"
-								}
-							],
-							"on_cancel": null,
-							"plugin_configuration": {
-								"id": "script-executor",
-								"version": "1"
-							},
-							"run_if":"passed",
-                            "type": "plugin"
-                        },
-                    ],
-                    "timeout": 30
-                },
-            ],
-            "name": "Install",
-            "never_cleanup_artifacts": false
-        },
-    ]
+      ]
+    }
+  ]
 }
