@@ -39,51 +39,19 @@
     ],
     "materials": [
         {
-		
-  "url": "https://srvptsvn.domain.outsystems.com/svn/rd/platform/branches/b10_0_0/",
-  "username": "extracvs",
-  "check_externals": false,
-  "filter": null,
-  "destination": "b10_0_0",
-  "auto_update": false,
-  "name": "PlatformCode",
-  "encrypted_password": "ZS+3XG45Xck=",
-  "type": "svn"
-
-          
-        },
-        {
-       
-                "auto_update": true,
-                "check_externals": false,
-                "destination": "ContinuousIntegration",
-                "encrypted_password": "ZS+3XG45Xck=",
-                "filter": {
-                    "ignore": [
-                        "tools/**/*"
-                    ]
-                },
-                "name": "ContinuousIntegration",
-                "url": "https://srvptsvn.domain.outsystems.com/svn/rd/tools/branches/BuildPipeline_DEV/CINTIA",
-                "username": "extracvs",
+			"auto_update": true,
+			"check_externals": false,
+			"destination": "ContinuousIntegration",
+			"encrypted_password": "ZS+3XG45Xck=",
+			"filter": {
+				"ignore": [
+					"tools/**/*"
+				]
+			},
+			"name": "ContinuousIntegration",
+			"url": "https://srvptsvn.domain.outsystems.com/svn/rd/tools/branches/BuildPipeline_DEV/CINTIA",
+			"username": "extracvs",
             "type": "svn"
-        },
-        {
-                "auto_update": true,
-                "name": "CINTIA_JAVA",
-                "pipeline": "NRTranslation",
-                "stage": "JavaTranslation",
-            
-            "type": "dependency"
-        },
-        {
-            
-                "auto_update": true,
-                "name": "CINTIA",
-                "pipeline": "NRBuild",
-                "stage": "PublishBuildToS3",
-            
-            "type": "dependency"
         }
     ],
     "stages": [
@@ -111,7 +79,6 @@
                     "tabs": [],
                     "tasks": [
                         {
-                            "attributes": {
                                 "configuration": [
                                     {
                                         "key": "script",
@@ -125,12 +92,10 @@
                                 },
                                 "run_if": [
                                     "passed"
-                                ]
-                            },
+                                ],
                             "type": "plugin"
                         },
                         {
-                            "attributes": {
                                 "configuration": [
                                     {
                                         "key": "script",
@@ -144,13 +109,11 @@
                                 },
                                 "run_if": [
                                     "passed"
-                                ]
-                            },
+                                ],
                             "type": "plugin"
                         },
                         {
-                            "attributes": {
-                                "configuration": [
+                            "configuration": [
                                     {
                                         "key": "script",
                                         "value": "cd ../pipelines/$GO_PIPELINE_NAME/ContinuousIntegration\r\n\r\nsource /opt/rh/python27/enable\r\n\r\npython  -c \"from restclients.regression import cleanup_client; cleanup_client.run_disk_maint()\""
@@ -164,11 +127,10 @@
                                 "run_if": [
                                     "passed"
                                 ]
-                            },
+                            ,
                             "type": "plugin"
                         },
                         {
-                            "attributes": {
                                 "configuration": [
                                     {
                                         "key": "script",
@@ -183,11 +145,10 @@
                                 "run_if": [
                                     "passed"
                                 ]
-                            },
+                            ,
                             "type": "plugin"
                         },
                         {
-                            "attributes": {
                                 "configuration": [
                                     {
                                         "key": "script",
@@ -202,7 +163,7 @@
                                 "run_if": [
                                     "failed"
                                 ]
-                            },
+                            ,
                             "type": "plugin"
                         }
                     ],
@@ -220,7 +181,6 @@
                     "tabs": [],
                     "tasks": [
                         {
-                            "attributes": {
                                 "arguments": [
                                     "/C",
                                     "if",
@@ -237,11 +197,10 @@
                                     "passed"
                                 ],
                                 "working_directory": null
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
                                 "arguments": [
                                     "create_event.py",
                                     "%GO_REVISION_PLATFORMCODE%",
@@ -256,11 +215,10 @@
                                     "passed"
                                 ],
                                 "working_directory": "ContinuousIntegration"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
                                 "arguments": [
                                     "-c",
                                     "\"from restclients.regression import cleanup_client; cleanup_client.run_db_maint()\""
@@ -271,11 +229,10 @@
                                     "passed"
                                 ],
                                 "working_directory": "ContinuousIntegration"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
                                 "arguments": [
                                     "-c",
                                     "\"from restclients.regression import cleanup_client; cleanup_client.run_disk_maint()\""
@@ -286,11 +243,10 @@
                                     "passed"
                                 ],
                                 "working_directory": "ContinuousIntegration"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
                                 "arguments": [
                                     "create_event.py",
                                     "%GO_REVISION_PLATFORMCODE%",
@@ -307,11 +263,10 @@
                                     "passed"
                                 ],
                                 "working_directory": "ContinuousIntegration"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
                                 "arguments": [
                                     "create_event.py",
                                     "%GO_REVISION_PLATFORMCODE%",
@@ -330,7 +285,7 @@
                                     "failed"
                                 ],
                                 "working_directory": "ContinuousIntegration"
-                            },
+                            ,
                             "type": "exec"
                         }
                     ],
@@ -348,7 +303,6 @@
                     "tabs": [],
                     "tasks": [
                         {
-                            "attributes": {
                                 "configuration": [
                                     {
                                         "key": "script",
@@ -363,11 +317,10 @@
                                 "run_if": [
                                     "passed"
                                 ]
-                            },
+                            ,
                             "type": "plugin"
                         },
                         {
-                            "attributes": {
                                 "arguments": [
                                     "-c",
                                     "rm -rfv /eSpace"
@@ -378,11 +331,10 @@
                                     "passed"
                                 ],
                                 "working_directory": null
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
                                 "arguments": [
                                     "-c",
                                     "ln -s $(pwd) /eSpace"
@@ -393,11 +345,10 @@
                                     "passed"
                                 ],
                                 "working_directory": "b10_0_0"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
                                 "arguments": [
                                     "-c",
                                     "aws s3 cp s3://$GO_ARTIFACTS_S3_BUCKET/$GO_DEPENDENCY_LOCATOR_CINTIA_JAVA/TranslationFiles.7z ."
@@ -408,11 +359,10 @@
                                     "passed"
                                 ],
                                 "working_directory": null
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
                                 "arguments": [
                                     "-c",
                                     "7za x TranslationFiles.7z"
@@ -423,11 +373,11 @@
                                     "passed"
                                 ],
                                 "working_directory": null
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "-c",
                                     "rm -fv TranslationFiles.7z"
@@ -442,7 +392,6 @@
                             "type": "exec"
                         },
                         {
-                            "attributes": {
                                 "arguments": [
                                     "-c",
                                     "find TranslationFiles/connectors/* -maxdepth 0 -not -iname \"*$JACINTIA_WEB_SERVER*\" -exec rm -rfv {} \\;"
@@ -453,11 +402,10 @@
                                     "passed"
                                 ],
                                 "working_directory": null
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
                                 "arguments": [
                                     "-c",
                                     "find TranslationFiles/ -type d -exec chmod -v 750 {} \\;"
@@ -468,11 +416,10 @@
                                     "passed"
                                 ],
                                 "working_directory": null
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
                                 "arguments": [
                                     "-c",
                                     "find TranslationFiles/ -type f -exec chmod -v 640 {} \\;"
@@ -483,11 +430,10 @@
                                     "passed"
                                 ],
                                 "working_directory": null
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
                                 "arguments": [
                                     "-c",
                                     "find TranslationFiles/ -name \"*.sh\" -exec chmod -v 755 {} \\;"
@@ -498,11 +444,10 @@
                                     "passed"
                                 ],
                                 "working_directory": null
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
                                 "arguments": [
                                     "-c",
                                     "aws s3 cp s3://$GO_ARTIFACTS_S3_BUCKET/$GO_DEPENDENCY_LOCATOR_CINTIA/Build.7z ."
@@ -513,11 +458,10 @@
                                     "passed"
                                 ],
                                 "working_directory": "b10_0_0"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
                                 "arguments": [
                                     "-c",
                                     "7za x Build.7z -oextracted"
@@ -528,11 +472,10 @@
                                     "passed"
                                 ],
                                 "working_directory": "b10_0_0"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
                                 "arguments": [
                                     "-c",
                                     "rm -fv Build.7z"
@@ -543,11 +486,10 @@
                                     "passed"
                                 ],
                                 "working_directory": "b10_0_0"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
                                 "arguments": [
                                     "-c",
                                     "service outsystems stop"
@@ -558,11 +500,10 @@
                                     "passed"
                                 ],
                                 "working_directory": null
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
                                 "arguments": [
                                     "-c",
                                     "/bin/cp -av TranslationFiles/* /opt/outsystems/platform"
@@ -573,11 +514,10 @@
                                     "passed"
                                 ],
                                 "working_directory": null
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
                                 "arguments": [
                                     "-c",
                                     "/bin/cp -av b10_0_0/extracted/js/* b10_0_0"
@@ -588,11 +528,10 @@
                                     "passed"
                                 ],
                                 "working_directory": null
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
                                 "arguments": [
                                     "-c",
                                     "rm -rf b10_0_0/extracted"
@@ -603,11 +542,10 @@
                                     "passed"
                                 ],
                                 "working_directory": null
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
                                 "arguments": [
                                     "-c",
                                     "find TranslationFiles | sed -r 's/TranslationFiles//' > /opt/outsystems/platform/filesSynced.txt"
@@ -618,11 +556,10 @@
                                     "passed"
                                 ],
                                 "working_directory": null
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
                                 "arguments": [
                                     "-c",
                                     "HubServer/Setup/Developer/SyncBatches/afterSync.sh $JACINTIA_WEB_SERVER"
@@ -633,11 +570,11 @@
                                     "passed"
                                 ],
                                 "working_directory": "b10_0_0"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "configuration": [
                                     {
                                         "key": "script",
@@ -652,11 +589,11 @@
                                 "run_if": [
                                     "passed"
                                 ]
-                            },
+                            ,
                             "type": "plugin"
                         },
                         {
-                            "attributes": {
+                            
                                 "configuration": [
                                     {
                                         "key": "script",
@@ -671,11 +608,11 @@
                                 "run_if": [
                                     "passed"
                                 ]
-                            },
+                            ,
                             "type": "plugin"
                         },
                         {
-                            "attributes": {
+                            
                                 "configuration": [
                                     {
                                         "key": "script",
@@ -690,11 +627,11 @@
                                 "run_if": [
                                     "passed"
                                 ]
-                            },
+                            ,
                             "type": "plugin"
                         },
                         {
-                            "attributes": {
+                            
                                 "configuration": [
                                     {
                                         "key": "script",
@@ -709,7 +646,7 @@
                                 "run_if": [
                                     "failed"
                                 ]
-                            },
+                            ,
                             "type": "plugin"
                         }
                     ],
@@ -727,7 +664,7 @@
                     "tabs": [],
                     "tasks": [
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "create_event.py",
                                     "%GO_REVISION_PLATFORMCODE%",
@@ -742,11 +679,11 @@
                                     "passed"
                                 ],
                                 "working_directory": "ContinuousIntegration"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "cleanup",
                                     "--remove-unversioned",
@@ -758,11 +695,11 @@
                                     "passed"
                                 ],
                                 "working_directory": "b10_0_0"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "/C",
                                     "aws",
@@ -777,11 +714,11 @@
                                     "passed"
                                 ],
                                 "working_directory": "b10_0_0"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "/C",
                                     "7z",
@@ -795,11 +732,11 @@
                                     "passed"
                                 ],
                                 "working_directory": "b10_0_0"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "/C",
                                     "del",
@@ -811,11 +748,11 @@
                                     "passed"
                                 ],
                                 "working_directory": "b10_0_0"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "configuration": [
                                     {
                                         "key": "script",
@@ -830,11 +767,11 @@
                                 "run_if": [
                                     "passed"
                                 ]
-                            },
+                            ,
                             "type": "plugin"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "b10_0_0\\extracted\\Build",
                                     "b10_0_0\\Build",
@@ -848,11 +785,11 @@
                                     "passed"
                                 ],
                                 "working_directory": null
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "/C",
                                     "rmdir",
@@ -866,11 +803,11 @@
                                     "passed"
                                 ],
                                 "working_directory": null
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "b10_0_0\\extracted\\SmsHandler",
                                     "b10_0_0\\HubServer\\SmsHandler\\bin\\",
@@ -884,11 +821,11 @@
                                     "passed"
                                 ],
                                 "working_directory": null
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "b10_0_0\\extracted\\Dispatcher",
                                     "b10_0_0\\HubServer\\Dispatcher\\bin\\",
@@ -902,11 +839,11 @@
                                     "passed"
                                 ],
                                 "working_directory": null
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "b10_0_0\\extracted\\mrgen",
                                     "b10_0_0\\Commons\\mrgen\\bin\\",
@@ -920,11 +857,11 @@
                                     "passed"
                                 ],
                                 "working_directory": null
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "b10_0_0\\extracted\\js",
                                     "b10_0_0",
@@ -938,11 +875,11 @@
                                     "passed"
                                 ],
                                 "working_directory": null
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "/C",
                                     "rmdir",
@@ -956,11 +893,11 @@
                                     "passed"
                                 ],
                                 "working_directory": null
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "/C HubServer\\tools\\BuildTools\\Common\\Tools\\junction.exe C:\\eSpace ."
                                 ],
@@ -970,11 +907,11 @@
                                     "passed"
                                 ],
                                 "working_directory": "b10_0_0"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "..\\ContinuousIntegration\\*",
                                     "QA\\ContinuousIntegration\\",
@@ -988,11 +925,11 @@
                                     "passed"
                                 ],
                                 "working_directory": "b10_0_0"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "ContinuousIntegration\\files\\*",
                                     "b10_0_0",
@@ -1006,11 +943,11 @@
                                     "passed"
                                 ],
                                 "working_directory": null
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "ServiceStudio\\ServiceStudio.config",
                                     "Build\\Debug\\",
@@ -1024,11 +961,11 @@
                                     "passed"
                                 ],
                                 "working_directory": "b10_0_0"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "/C",
                                     "Commons\\ThirdParty\\nodejs\\update-modules.bat"
@@ -1039,11 +976,11 @@
                                     "passed"
                                 ],
                                 "working_directory": "b10_0_0"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "/C UpdateDBG.bat"
                                 ],
@@ -1051,11 +988,11 @@
                                 "on_cancel": null,
                                 "run_if": [],
                                 "working_directory": "b10_0_0/HubServer/"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "update_pip_requirements.py"
                                 ],
@@ -1065,11 +1002,11 @@
                                     "passed"
                                 ],
                                 "working_directory": "ContinuousIntegration"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "configuration": [
                                     {
                                         "key": "script",
@@ -1084,11 +1021,11 @@
                                 "run_if": [
                                     "passed"
                                 ]
-                            },
+                            ,
                             "type": "plugin"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "create_event.py",
                                     "%GO_REVISION_PLATFORMCODE%",
@@ -1105,11 +1042,11 @@
                                     "passed"
                                 ],
                                 "working_directory": "ContinuousIntegration"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "create_event.py",
                                     "%GO_REVISION_PLATFORMCODE%",
@@ -1128,7 +1065,7 @@
                                     "failed"
                                 ],
                                 "working_directory": "ContinuousIntegration"
-                            },
+                            ,
                             "type": "exec"
                         }
                     ],
@@ -1173,7 +1110,7 @@
                     "tabs": [],
                     "tasks": [
                         {
-                            "attributes": {
+                            
                                 "configuration": [
                                     {
                                         "key": "script",
@@ -1188,11 +1125,11 @@
                                 "run_if": [
                                     "passed"
                                 ]
-                            },
+                            ,
                             "type": "plugin"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "-c",
                                     "/bin/cp /eSpace/QA/ContinuousIntegration/javaautomation/runner/outsystems.junit.jar /opt/outsystems/platform"
@@ -1203,11 +1140,11 @@
                                     "passed"
                                 ],
                                 "working_directory": null
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "configuration": [
                                     {
                                         "key": "script",
@@ -1222,11 +1159,11 @@
                                 "run_if": [
                                     "passed"
                                 ]
-                            },
+                            ,
                             "type": "plugin"
                         },
                         {
-                            "attributes": {
+                            
                                 "configuration": [
                                     {
                                         "key": "script",
@@ -1241,11 +1178,11 @@
                                 "run_if": [
                                     "failed"
                                 ]
-                            },
+                            ,
                             "type": "plugin"
                         },
                         {
-                            "attributes": {
+                            
                                 "configuration": [
                                     {
                                         "key": "script",
@@ -1260,11 +1197,11 @@
                                 "run_if": [
                                     "passed"
                                 ]
-                            },
+                            ,
                             "type": "plugin"
                         },
                         {
-                            "attributes": {
+                            
                                 "configuration": [
                                     {
                                         "key": "script",
@@ -1279,11 +1216,11 @@
                                 "run_if": [
                                     "any"
                                 ]
-                            },
+                            ,
                             "type": "plugin"
                         },
                         {
-                            "attributes": {
+                            
                                 "configuration": [
                                     {
                                         "key": "script",
@@ -1298,7 +1235,7 @@
                                 "run_if": [
                                     "any"
                                 ]
-                            },
+                            ,
                             "type": "plugin"
                         }
                     ],
@@ -1327,7 +1264,7 @@
                     "tabs": [],
                     "tasks": [
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "create_test_run.py",
                                     "%GO_REVISION_PLATFORMCODE%",
@@ -1344,11 +1281,11 @@
                                     "passed"
                                 ],
                                 "working_directory": "b10_0_0\\QA\\ContinuousIntegration"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "stage_run.py",
                                     "--configs_filter",
@@ -1370,11 +1307,11 @@
                                     "passed"
                                 ],
                                 "working_directory": "b10_0_0\\QA\\ContinuousIntegration"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "end_test_run.py",
                                     "%GO_REVISION_PLATFORMCODE%",
@@ -1389,11 +1326,11 @@
                                     "any"
                                 ],
                                 "working_directory": "b10_0_0\\QA\\ContinuousIntegration"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "-c",
                                     "\"import go_server; go_server.trigger_pipe_if_run_finished('FlakyDetection', '%BRANCH_NAME%', %GO_REVISION_PLATFORMCODE%, 'CorePlatform', '%GO_DEPENDENCY_LOCATOR_CINTIA%')\""
@@ -1404,7 +1341,7 @@
                                     "any"
                                 ],
                                 "working_directory": "ContinuousIntegration"
-                            },
+                            ,
                             "type": "exec"
                         }
                     ],
@@ -1433,7 +1370,7 @@
                     "tabs": [],
                     "tasks": [
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "create_test_run.py",
                                     "%GO_REVISION_PLATFORMCODE%",
@@ -1450,11 +1387,11 @@
                                     "passed"
                                 ],
                                 "working_directory": "b10_0_0\\QA\\ContinuousIntegration"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "stage_run.py",
                                     "--configs_filter",
@@ -1476,11 +1413,11 @@
                                     "passed"
                                 ],
                                 "working_directory": "b10_0_0\\QA\\ContinuousIntegration"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "end_test_run.py",
                                     "%GO_REVISION_PLATFORMCODE%",
@@ -1495,11 +1432,11 @@
                                     "any"
                                 ],
                                 "working_directory": "b10_0_0\\QA\\ContinuousIntegration"
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
-                            "attributes": {
+                            
                                 "arguments": [
                                     "-c",
                                     "\"import go_server; go_server.trigger_pipe_if_run_finished('FlakyDetection', '%BRANCH_NAME%', %GO_REVISION_PLATFORMCODE%, 'CorePlatform', '%GO_DEPENDENCY_LOCATOR_CINTIA%')\""
@@ -1510,7 +1447,7 @@
                                     "any"
                                 ],
                                 "working_directory": "ContinuousIntegration"
-                            },
+                            ,
                             "type": "exec"
                         }
                     ],
