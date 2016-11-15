@@ -1,5 +1,10 @@
 {
-    "enable_pipeline_locking": true,
+  "group": "QA",
+  "name": "NRCorePlatformTestsClone",
+  "label_template": "${COUNT}",
+  "enable_pipeline_locking": true,
+  "tracking_tool": null,
+  "timer": null,
     "environment_variables": [
         {
             "name": "BATCH_SIZE",
@@ -32,7 +37,6 @@
             "value": "WILDFLY"
         }
     ],
-    "label_template": "${COUNT}",
     "materials": [
         {
             "attributes": 
@@ -84,8 +88,6 @@
             "type": "dependency"
         }
     ],
-    "name": "NRCorePlatformTestsClone",
-    "parameters": [],
     "stages": [
         {
             "approval": {
@@ -1521,7 +1523,4 @@
             "never_cleanup_artifacts": false
         }
     ]
-    "template": null,
-    "timer": null,
-    "tracking_tool": null
 }
