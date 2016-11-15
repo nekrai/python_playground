@@ -65,14 +65,14 @@
                 },
                 "name": "ContinuousIntegration",
                 "url": "https://srvptsvn.domain.outsystems.com/svn/rd/tools/branches/BuildPipeline_DEV/CINTIA",
-                "username": "extracvs"
+                "username": "extracvs",
             "type": "svn"
         },
         {
                 "auto_update": true,
                 "name": "CINTIA_JAVA",
                 "pipeline": "NRTranslation",
-                "stage": "JavaTranslation"
+                "stage": "JavaTranslation",
             
             "type": "dependency"
         },
@@ -81,7 +81,7 @@
                 "auto_update": true,
                 "name": "CINTIA",
                 "pipeline": "NRBuild",
-                "stage": "PublishBuildToS3"
+                "stage": "PublishBuildToS3",
             
             "type": "dependency"
         }
