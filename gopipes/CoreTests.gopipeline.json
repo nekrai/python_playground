@@ -388,7 +388,7 @@
                                     "passed"
                                 ],
                                 "working_directory": null
-                            },
+                            ,
                             "type": "exec"
                         },
                         {
