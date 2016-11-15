@@ -35,7 +35,8 @@
     "label_template": "${COUNT}",
     "materials": [
         {
-            "attributes": {
+            "attributes": 
+			{
                 "auto_update": true,
                 "check_externals": false,
                 "destination": "b10_0_0",
@@ -1519,7 +1520,7 @@
             "name": "NRCorePlatformTests",
             "never_cleanup_artifacts": false
         }
-    ],
+    ]
     "template": null,
     "timer": null,
     "tracking_tool": null
