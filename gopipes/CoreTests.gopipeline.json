@@ -38,7 +38,7 @@
 			"auto_update": true,
 			"check_externals": false,
 			"destination": "ContinuousIntegration",
-			"encrypted_password": "ZS+3XG45Xck=",
+			"encrypted_password": "Rc2PSi18HbY=",
 			"filter": {
 				"ignore": [
 					"tools/**/*"
