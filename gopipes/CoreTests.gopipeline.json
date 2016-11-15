@@ -71,7 +71,7 @@
                     "artifacts": [],
                     "environment_variables": [],
                     "name": "Cleanup_Java",
-                    "properties": null,
+                    "properties": [],
                     "resources": [
                         "JACINTIA"
                     ],
@@ -79,18 +79,18 @@
                     "tabs": [],
                     "tasks": [
                         {
-                                "configuration": [
-                                    {
-                                        "key": "script",
-                                        "value": "cd ../pipelines/$GO_PIPELINE_NAME/ContinuousIntegration\r\n\r\nsource /opt/rh/python27/enable\r\n\r\npython create_event.py $GO_REVISION_PLATFORMCODE $BRANCH_NAME CorePlatform Cleanup --start"
-                                    }
-                                ],
-                                "on_cancel": null,
-                                "plugin_configuration": {
-                                    "id": "script-executor",
-                                    "version": "1"
-                                },
-                                "run_if":"passed",
+							"configuration": [
+								{
+									"key": "script",
+									"value": "cd ../pipelines/$GO_PIPELINE_NAME/ContinuousIntegration\r\n\r\nsource /opt/rh/python27/enable\r\n\r\npython create_event.py $GO_REVISION_PLATFORMCODE $BRANCH_NAME CorePlatform Cleanup --start"
+								}
+							],
+							"on_cancel": null,
+							"plugin_configuration": {
+								"id": "script-executor",
+								"version": "1"
+							},
+							"run_if":"passed",
                             "type": "plugin"
                         },
                     ],
