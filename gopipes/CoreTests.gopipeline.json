@@ -1,26 +1,37 @@
 {
-   'tracking_tool':None,
+   'tracking_tool':{
+
+   },
    'enable_pipeline_locking':False,
+   'group':'bah',
    'label_template':'${COUNT}',
    'parameters':[
 
    ],
-   'timer':None,
+   'timer':{
+
+   },
    'materials':[
       {
          'name':'TheOne',
          'url':'https://github.com/nekrai/python_playground.git',
          'type':'git',
          'destination':'TheOne',
-         'submodule_folder':None,
+         'submodule_folder':{
+
+         },
          'shallow_clone':False,
-         'filter':None,
+         'filter':{
+
+         },
          'auto_update':True,
          'branch':'master',
          'invert_filter':False
       }
    ],
-   'template':None,
+   'template':{
+
+   },
    'environment_variables':[
 
    ],
@@ -46,12 +57,18 @@
          },
          'jobs':[
             {
-               'run_instance_count':None,
+               'run_instance_count':{
+
+               },
                'tasks':[
                   {
-                     'on_cancel':None,
+                     'on_cancel':{
+
+                     },
                      'type':'exec',
-                     'working_directory':None,
+                     'working_directory':{
+
+                     },
                      'command':'dir',
                      'run_if':'passed'
                   }
@@ -63,11 +80,15 @@
                'artifacts':[
 
                ],
-               'timeout':None,
+               'timeout':{
+
+               },
                'environment_variables':[
 
                ],
-               'properties':None,
+               'properties':{
+
+               },
                'resources':[
 
                ]
