@@ -1,22 +1,40 @@
 {
-   "tracking_tool": null,
+   "tracking_tool":null,
    "enable_pipeline_locking":false,
    "group":"bah",
    "label_template":"${COUNT}",
-   "timer": null,
+   "parameters":[
+
+   ],
+   "timer":null,
    "materials":[
       {
-         "filter":{
-
+         "attributes":{
+            "name":"TheOne",
+            "url":"https://github.com/nekrai/python_playground.git",
+            "destination":"TheOne",
+            "submodule_folder":null,
+            "shallow_clone":false,
+            "filter":null,
+            "auto_update":true,
+            "branch":"master",
+            "invert_filter":false
          },
-         "auto_update":true,
-         "name":"TheOne",
-         "branch":"master",
-         "url":"https://github.com/nekrai/python_playground.git",
-         "destination":"TheOne",
          "type":"git"
       }
    ],
+   "_links":{
+      "doc":{
+         "href":"https://api.go.cd/#pipeline-config"
+      },
+      "self":{
+         "href":"http://localhost:8153/go/api/admin/pipelines/Test"
+      },
+      "find":{
+         "href":"http://localhost:8153/go/api/admin/pipelines/:pipeline_name"
+      }
+   },
+   "template":null,
    "environment_variables":[
 
    ],
@@ -24,24 +42,36 @@
       {
          "clean_working_directory":false,
          "name":"defaultStage",
-         "fetch_materials":true,
          "never_cleanup_artifacts":false,
+         "fetch_materials":true,
          "environment_variables":[
 
          ],
          "approval":{
-            "type":"success"
+            "type":"success",
+            "authorization":{
+               "users":[
+
+               ],
+               "roles":[
+
+               ]
+            }
          },
          "jobs":[
             {
+               "run_instance_count":null,
                "tasks":[
                   {
-                     "on_cancel":null,
-                     "type":"exec",
-                     "working_directory":null,
-                     "command":"dir",
-                     "run_if":"passed",
-					 "arguments": []
+                     "attributes":{
+                        "on_cancel":null,
+                        "working_directory":null,
+                        "command":"dir",
+                        "run_if":[
+                           "passed"
+                        ]
+                     },
+                     "type":"exec"
                   }
                ],
                "name":"defaultJob",
@@ -51,10 +81,11 @@
                "artifacts":[
 
                ],
+               "timeout":null,
                "environment_variables":[
 
                ],
-               "properties": [],
+               "properties":null,
                "resources":[
 
                ]
