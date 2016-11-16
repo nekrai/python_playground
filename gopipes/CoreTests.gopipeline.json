@@ -6,11 +6,6 @@
   "group" : "ThatBranch",
     "materials": [
         {
-	   "auto_update": true,
-	   "check_externals": false,
-	   "destination": "ContinuousIntegration",
-	   "filter": null,
-	   "name": "ContinuousIntegration",
 	   "url": "https://github.com/nekrai/theone.git",
 	   "type": "git"
         }
