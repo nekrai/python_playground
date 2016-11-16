@@ -1,40 +1,73 @@
 {
-   "tracking_tool":null,
-   "enable_pipeline_locking":false,
-   "group":"babalol",
-   "label_template":"${COUNT}",
-   "parameters":[
+   'enable_pipeline_locking':False,
+   'group':'bah',
+   'label_template':'${COUNT}',
+   'materials':[
+      {
+         'name':'TheOne',
+         'url':'https://github.com/nekrai/python_playground.git',
+         'destination':'TheOne',
+         'auto_update':True,
+         'branch':'master',
+         'type':'git'
+      }
+   ],
+   'environment_variables':[
 
    ],
-   "timer":null,
+   'stages':[
+      {
+         'clean_working_directory':False,
+         'name':'defaultStage',
+         'fetch_materials':True,
+         'never_cleanup_artifacts':False,
+         'environment_variables':[
+
+         ],
+         'approval':{
+            'type':'success'
+         },
+         'jobs':[
+            {
+               'tasks':[
+                  {
+                     'type':'exec',
+                     'command':'dir',
+                     'run_if':'passed'
+                  }
+               ],
+               'name':'defaultJob',
+               'tabs':[
+
+               ],
+               'artifacts':[
+
+               ],
+               'environment_variables':[
+
+               ],
+               'resources':[
+
+               ]
+            }
+         ]
+      }
+   ],
+   'name':'Test2'
+}{
+   "enable_pipeline_locking":false,
+   "group":"bah",
+   "label_template":"${COUNT}",
    "materials":[
       {
-         "attributes":{
-            "name":"TheOne",
-            "url":"https://github.com/nekrai/python_playground.git",
-            "destination":"TheOne",
-            "submodule_folder":null,
-            "shallow_clone":false,
-            "filter":null,
-            "auto_update":true,
-            "branch":"master",
-            "invert_filter":false
-         },
+         "name":"TheOne",
+         "url":"https://github.com/nekrai/python_playground.git",
+         "destination":"TheOne",
+         "auto_update":true,
+         "branch":"master",
          "type":"git"
       }
    ],
-   "_links":{
-      "doc":{
-         "href":"https://api.go.cd/#pipeline-config"
-      },
-      "self":{
-         "href":"http://localhost:8153/go/api/admin/pipelines/Test"
-      },
-      "find":{
-         "href":"http://localhost:8153/go/api/admin/pipelines/:pipeline_name"
-      }
-   },
-   "template":null,
    "environment_variables":[
 
    ],
@@ -42,36 +75,21 @@
       {
          "clean_working_directory":false,
          "name":"defaultStage",
-         "never_cleanup_artifacts":false,
          "fetch_materials":true,
+         "never_cleanup_artifacts":false,
          "environment_variables":[
 
          ],
          "approval":{
-            "type":"success",
-            "authorization":{
-               "users":[
-
-               ],
-               "roles":[
-
-               ]
-            }
+            "type":"success"
          },
          "jobs":[
             {
-               "run_instance_count":null,
                "tasks":[
                   {
-                     "attributes":{
-                        "on_cancel":null,
-                        "working_directory":null,
-                        "command":"dir",
-                        "run_if":[
-                           "passed"
-                        ]
-                     },
-                     "type":"exec"
+                     "type":"exec",
+                     "command":"dir",
+                     "run_if":"passed"
                   }
                ],
                "name":"defaultJob",
@@ -81,11 +99,9 @@
                "artifacts":[
 
                ],
-               "timeout":null,
                "environment_variables":[
 
                ],
-               "properties":null,
                "resources":[
 
                ]
@@ -93,5 +109,5 @@
          ]
       }
    ],
-   "name":"Test2"
+   "name":"Test222"
 }
