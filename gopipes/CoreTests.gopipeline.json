@@ -1,1 +1,115 @@
-{u'tracking_tool': None, u'enable_pipeline_locking': False, u'label_template': u'${COUNT}', u'parameters': [], u'timer': None, u'materials': [{u'name': u'TheOne', u'auto_update': True, u'type': u'git', u'destination': u'TheOne', u'submodule_folder': None, u'shallow_clone': False, u'filter': None, u'url': u'https://github.com/nekrai/python_playground.git', u'branch': u'master', u'invert_filter': False}], u'template': None, u'environment_variables': [], u'stages': [{u'clean_working_directory': False, u'name': u'defaultStage', u'never_cleanup_artifacts': False, u'fetch_materials': True, u'environment_variables': [], u'approval': {u'type': u'success', u'authorization': {u'users': [], u'roles': []}}, u'jobs': [{u'run_instance_count': None, u'tasks': [{u'on_cancel': None, u'configuration': [{u'value': u'test1: bla\r\ntest2: ble', u'key': u'base_config'}, {u'value': u'ServiceStudio.Tests.ApplicationModulesListTests+RealView.CreateLondonAppWithMobileModule\r\nServiceStudio.Tests.ApplicationModulesListTests+RealView.DefaultTemplates\r\nServiceStudio.Tests.FeatureManagementTests.CheckWebServiceIsUpAndRunning\r\nServiceStudio.Tests.JQueryFunctionalTests.NoOusystemsInternalMessageInProtectedEspaces\r\nServiceStudio.Tests.ScriptTests.ScriptTest+AutoComplete\r\nServiceStudio.Tests.ScriptTests.ScriptTest+MasterDetailWithQueryAlreadyPresent\r\nServiceStudio.Tests.ScriptTests.TestTutorialInteraction\r\nServiceStudio.Tests.SuggestionsTests.TestSuggestionLimitOnInputWidget\r\nServiceStudio.Tests.WebReferenceTests.ImportWebService+WSTests\\Import\\CorporateFlightOperationDetails.wsdl\r\nServiceStudio.Tests.WebReferenceTests.ImportWebService+WSTests\\Import\\i531687ImportWSDL.wsdl\r\nServiceStudio.Tests.WebReferenceTests.ImportWebService+WSTests\\Import\\Optionals.wsdl\r\nServiceStudio.Tests.WebReferenceTests.ImportWebService+WSTests\\Import\\Optionals2.wsdl\r\nServiceStudio.Tests.WebReferenceTests.ImportWebService+WSTests\\Import\\OptionalsSmall.wsdl', u'key': u'test_to_run'}, {u'value': u'ServiceStudio.Tests.MiscViewTests+SimpleView.TestPropertiesOrder\r\nServiceStudio.Tests.ScopeTests.CheckExpressionInlineHelp', u'key': u'exclude_tests'}, {u'value': u'TheOne/', u'key': u'working_directory'}, {u'value': u'DotNet', u'key': u'TestType'}, {u'value': u'x86', u'key': u'NUnitVersion'}, {u'value': u'ServiceStudio.Tests.dll', u'key': u'binary_file'}, {u'value': u'ServiceStudioTests.xml', u'key': u'result_file'}], u'type': u'pluggable_task', u'run_if': u'passed', u'plugin_configuration': {u'version': u'1', u'id': u'ostests-executor'}}], u'name': u'defaultJob', u'tabs': [], u'artifacts': [], u'timeout': None, u'environment_variables': [], u'properties': None, u'resources': []}]}], u'name': u'TestClone', u'group': u'PRD'}
+{  
+   'tracking_tool':None,
+   'enable_pipeline_locking':False,
+   'label_template':'${COUNT}',
+   'parameters':[  
+
+   ],
+   'timer':None,
+   'materials':[  
+      {  
+         'name':'TheOne',
+         'auto_update':True,
+         'type':'git',
+         'destination':'TheOne',
+         'submodule_folder':None,
+         'shallow_clone':False,
+         'filter':None,
+         'url':'https://github.com/nekrai/python_playground.git',
+         'branch':'master',
+         'invert_filter':False
+      }
+   ],
+   'template':None,
+   'environment_variables':[  
+
+   ],
+   'stages':[  
+      {  
+         'clean_working_directory':False,
+         'name':'defaultStage',
+         'never_cleanup_artifacts':False,
+         'fetch_materials':True,
+         'environment_variables':[  
+
+         ],
+         'approval':{  
+            'type':'success',
+            'authorization':{  
+               'users':[  
+
+               ],
+               'roles':[  
+
+               ]
+            }
+         },
+         'jobs':[  
+            {  
+               'run_instance_count':None,
+               'tasks':[  
+                  {  
+                     'on_cancel':None,
+                     'configuration':[  
+                        {  
+                           'value':'test1: bla\r\ntest2: ble',
+                           'key':'base_config'
+                        },
+                        {  
+                           'value':'ServiceStudio.Tests.ApplicationModulesListTests+RealView.CreateLondonAppWithMobileModule\r\nServiceStudio.Tests.ApplicationModulesListTests+RealView.DefaultTemplates\r\nServiceStudio.Tests.FeatureManagementTests.CheckWebServiceIsUpAndRunning\r\nServiceStudio.Tests.JQueryFunctionalTests.NoOusystemsInternalMessageInProtectedEspaces\r\nServiceStudio.Tests.ScriptTests.ScriptTest+AutoComplete\r\nServiceStudio.Tests.ScriptTests.ScriptTest+MasterDetailWithQueryAlreadyPresent\r\nServiceStudio.Tests.ScriptTests.TestTutorialInteraction\r\nServiceStudio.Tests.SuggestionsTests.TestSuggestionLimitOnInputWidget\r\nServiceStudio.Tests.WebReferenceTests.ImportWebService+WSTests\\Import\\CorporateFlightOperationDetails.wsdl\r\nServiceStudio.Tests.WebReferenceTests.ImportWebService+WSTests\\Import\\i531687ImportWSDL.wsdl\r\nServiceStudio.Tests.WebReferenceTests.ImportWebService+WSTests\\Import\\Optionals.wsdl\r\nServiceStudio.Tests.WebReferenceTests.ImportWebService+WSTests\\Import\\Optionals2.wsdl\r\nServiceStudio.Tests.WebReferenceTests.ImportWebService+WSTests\\Import\\OptionalsSmall.wsdl',
+                           'key':'test_to_run'
+                        },
+                        {  
+                           'value':'ServiceStudio.Tests.MiscViewTests+SimpleView.TestPropertiesOrder\r\nServiceStudio.Tests.ScopeTests.CheckExpressionInlineHelp',
+                           'key':'exclude_tests'
+                        },
+                        {  
+                           'value':'TheOne/',
+                           'key':'working_directory'
+                        },
+                        {  
+                           'value':'DotNet',
+                           'key':'TestType'
+                        },
+                        {  
+                           'value':'x86',
+                           'key':'NUnitVersion'
+                        },
+                        {  
+                           'value':'ServiceStudio.Tests.dll',
+                           'key':'binary_file'
+                        },
+                        {  
+                           'value':'ServiceStudioTests.xml',
+                           'key':'result_file'
+                        }
+                     ],
+                     'type':'pluggable_task',
+                     'run_if':'passed',
+                     'plugin_configuration':{  
+                        'version':'1',
+                        'id':'ostests-executor'
+                     }
+                  }
+               ],
+               'name':'defaultJob',
+               'tabs':[  
+
+               ],
+               'artifacts':[  
+
+               ],
+               'timeout':None,
+               'environment_variables':[  
+
+               ],
+               'properties':None,
+               'resources':[  
+
+               ]
+            }
+         ]
+      }
+   ],
+   'name':'Test'
+}
