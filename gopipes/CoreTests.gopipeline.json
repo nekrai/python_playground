@@ -5,9 +5,6 @@
    'enable_pipeline_locking':False,
    'group':'bah',
    'label_template':'${COUNT}',
-   'parameters':[
-
-   ],
    'timer':{
 
    },
