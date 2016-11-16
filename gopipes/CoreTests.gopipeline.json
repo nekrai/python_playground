@@ -157,10 +157,6 @@ false
 "command":
 "dir"
 ,
-"run_if":
-[
-]
-,
 "arguments":
 [
 "*.js"
@@ -192,5 +188,5 @@ false
 ]
 ,
 "name":
-"Test2"
+"Test4"
 }
