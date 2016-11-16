@@ -1,13 +1,9 @@
 {
-   "tracking_tool":{
-
-   },
+   "tracking_tool": null,
    "enable_pipeline_locking":false,
    "group":"bah",
    "label_template":"${COUNT}",
-   "timer":{
-
-   },
+   "timer": null,
    "materials":[
       {
          "filter":{
@@ -40,15 +36,12 @@
             {
                "tasks":[
                   {
-                     "on_cancel":{
-
-                     },
+                     "on_cancel":null,
                      "type":"exec",
-                     "working_directory":{
-
-                     },
+                     "working_directory":null,
                      "command":"dir",
-                     "run_if":"passed"
+                     "run_if":"passed",
+					 "arguments": []
                   }
                ],
                "name":"defaultJob",
