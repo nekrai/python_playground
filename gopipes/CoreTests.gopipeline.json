@@ -1,113 +1,106 @@
+{'enable_pipeline_locking': False, 'group': 'bah', 'label_template': '${COUNT}', 'materials': [{'name': 'TheOne', 'url': 'https://github.com/nekrai/python_playground.git', 'destination': 'TheOne', 'auto_update': True, 'branch': 'master', 'type': 'git'}], 'environment_variables': [], 'stages': [{'clean_working_directory': False, 'name': 'defaultStage', 'fetch_materials': True, 'never_cleanup_artifacts': False, 'environment_variables': [], 'approval': {'type': 'success'}, 'jobs': [{'tasks': [{'type': 'exec', 'command': 'dir', 'run_if': 'passed'}], 'name': 'defaultJob', 'tabs': [], 'artifacts': [], 'environment_variables': [], 'resources': []}]}], 'name': 'Test2'}
 {
-   'enable_pipeline_locking':False,
-   'group':'bah',
-   'label_template':'${COUNT}',
-   'materials':[
-      {
-         'name':'TheOne',
-         'url':'https://github.com/nekrai/python_playground.git',
-         'destination':'TheOne',
-         'auto_update':True,
-         'branch':'master',
-         'type':'git'
-      }
-   ],
-   'environment_variables':[
-
-   ],
-   'stages':[
-      {
-         'clean_working_directory':False,
-         'name':'defaultStage',
-         'fetch_materials':True,
-         'never_cleanup_artifacts':False,
-         'environment_variables':[
-
-         ],
-         'approval':{
-            'type':'success'
-         },
-         'jobs':[
-            {
-               'tasks':[
-                  {
-                     'type':'exec',
-                     'command':'dir',
-                     'run_if':'passed'
-                  }
-               ],
-               'name':'defaultJob',
-               'tabs':[
-
-               ],
-               'artifacts':[
-
-               ],
-               'environment_variables':[
-
-               ],
-               'resources':[
-
-               ]
-            }
-         ]
-      }
-   ],
-   'name':'Test2'
-}{
-   "enable_pipeline_locking":false,
-   "group":"bah",
-   "label_template":"${COUNT}",
-   "materials":[
-      {
-         "name":"TheOne",
-         "url":"https://github.com/nekrai/python_playground.git",
-         "destination":"TheOne",
-         "auto_update":true,
-         "branch":"master",
-         "type":"git"
-      }
-   ],
-   "environment_variables":[
-
-   ],
-   "stages":[
-      {
-         "clean_working_directory":false,
-         "name":"defaultStage",
-         "fetch_materials":true,
-         "never_cleanup_artifacts":false,
-         "environment_variables":[
-
-         ],
-         "approval":{
-            "type":"success"
-         },
-         "jobs":[
-            {
-               "tasks":[
-                  {
-                     "type":"exec",
-                     "command":"dir",
-                     "run_if":"passed"
-                  }
-               ],
-               "name":"defaultJob",
-               "tabs":[
-
-               ],
-               "artifacts":[
-
-               ],
-               "environment_variables":[
-
-               ],
-               "resources":[
-
-               ]
-            }
-         ]
-      }
-   ],
-   "name":"Test222"
+"enable_pipeline_locking":
+false
+,
+"group":
+"bah"
+,
+"label_template":
+"${COUNT}"
+,
+"materials":
+[
+{
+"name":
+"TheOne"
+,
+"url":
+"https://github.com/nekrai/python_playground.git"
+,
+"destination":
+"TheOne"
+,
+"auto_update":
+true
+,
+"branch":
+"master"
+,
+"type":
+"git"
+}
+]
+,
+"environment_variables":
+[
+]
+,
+"stages":
+[
+{
+"clean_working_directory":
+false
+,
+"name":
+"defaultStage"
+,
+"fetch_materials":
+true
+,
+"never_cleanup_artifacts":
+false
+,
+"environment_variables":
+[
+]
+,
+"approval":
+{
+"type":
+"success"
+}
+,
+"jobs":
+[
+{
+"tasks":
+[
+{
+"type":
+"exec"
+,
+"command":
+"dir"
+,
+"run_if":
+"passed"
+}
+]
+,
+"name":
+"defaultJob"
+,
+"tabs":
+[
+]
+,
+"artifacts":
+[
+]
+,
+"environment_variables":
+[
+]
+,
+"resources":
+[
+]
+}
+]
+}
+]
+,
+"name":
+"Test222"
 }
