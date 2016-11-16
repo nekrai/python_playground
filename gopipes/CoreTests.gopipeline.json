@@ -1,57 +1,128 @@
 {
-   "enable_pipeline_locking":false,
-   "group":"bah",
-   "label_template":"${COUNT}",
-   "materials":[
-      {
-         "name":"TheOne",
-         "url":"https://github.com/nekrai/python_playground.git",
-         "destination":"TheOne",
-         "auto_update":true,
-         "branch":"master",
-         "type":"git"
-      }
-   ],
-   "environment_variables":[
-
-   ],
-   "stages":[
-      {
-         "clean_working_directory":false,
-         "name":"defaultStage",
-         "fetch_materials":true,
-         "never_cleanup_artifacts":false,
-         "environment_variables":[
-
-         ],
-         "approval":{
-            "type":"success"
-         },
-         "jobs":[
-            {
-               "tasks":[
-                  {
-                     "type":"exec",
-                     "command":"dir",
-                     "run_if":"passed"
-                  }
-               ],
-               "name":"defaultJob",
-               "tabs":[
-
-               ],
-               "artifacts":[
-
-               ],
-               "environment_variables":[
-
-               ],
-               "resources":[
-
-               ]
-            }
-         ]
-      }
-   ],
-   "name":"Test2"
+"enable_pipeline_locking":
+false
+,
+"group":
+"bah"
+,
+"label_template":
+"${COUNT}"
+,
+"materials":
+[
+{
+"name":
+"TheOne"
+,
+"url":
+"https://github.com/nekrai/python_playground.git"
+,
+"destination":
+"TheOne"
+,
+"auto_update":
+true
+,
+"branch":
+"master"
+,
+"type":
+"git"
+}
+]
+,
+"environment_variables":
+[
+{
+"secure":
+false
+,
+"value":
+"val1"
+,
+"name":
+"var1"
+}
+]
+,
+"stages":
+[
+{
+"clean_working_directory":
+false
+,
+"name":
+"defaultStage"
+,
+"fetch_materials":
+true
+,
+"never_cleanup_artifacts":
+false
+,
+"environment_variables":
+[
+]
+,
+"approval":
+{
+"type":
+"success"
+}
+,
+"jobs":
+[
+{
+"tasks":
+[
+{
+"working_directory":
+"xyz"
+,
+"type":
+"exec"
+,
+"command":
+"dir"
+,
+"run_if":
+"passed"
+,
+"arguments":
+[
+"a"
+,
+"b"
+,
+"c"
+]
+}
+]
+,
+"name":
+"defaultJob"
+,
+"tabs":
+[
+]
+,
+"artifacts":
+[
+]
+,
+"environment_variables":
+[
+]
+,
+"resources":
+[
+"resource1"
+]
+}
+]
+}
+]
+,
+"name":
+"Test3"
 }
