@@ -1,1 +1,75 @@
-{'tracking_tool': {}, 'enable_pipeline_locking': False, 'group': 'bah', 'label_template': '${COUNT}', 'timer': {}, 'materials': [{'filter': {}, 'auto_update': True, 'name': 'TheOne', 'branch': 'master', 'url': 'https://github.com/nekrai/python_playground.git', 'destination': 'TheOne', 'type': 'git'}], 'environment_variables': [], 'stages': [{'clean_working_directory': False, 'name': 'defaultStage', 'fetch_materials': True, 'never_cleanup_artifacts': False, 'environment_variables': [], 'approval': {'type': 'success'}, 'jobs': [{'tasks': [{'on_cancel': {}, 'type': 'exec', 'working_directory': {}, 'command': 'dir', 'run_if': 'passed'}], 'name': 'defaultJob', 'tabs': [], 'artifacts': [], 'environment_variables': [], 'properties': {}, 'resources': []}]}], 'name': 'Test'}
+{
+   "tracking_tool":{
+
+   },
+   "enable_pipeline_locking":false,
+   "group":"bah",
+   "label_template":"${COUNT}",
+   "timer":{
+
+   },
+   "materials":[
+      {
+         "filter":{
+
+         },
+         "auto_update":true,
+         "name":"TheOne",
+         "branch":"master",
+         "url":"https://github.com/nekrai/python_playground.git",
+         "destination":"TheOne",
+         "type":"git"
+      }
+   ],
+   "environment_variables":[
+
+   ],
+   "stages":[
+      {
+         "clean_working_directory":false,
+         "name":"defaultStage",
+         "fetch_materials":true,
+         "never_cleanup_artifacts":false,
+         "environment_variables":[
+
+         ],
+         "approval":{
+            "type":"success"
+         },
+         "jobs":[
+            {
+               "tasks":[
+                  {
+                     "on_cancel":{
+
+                     },
+                     "type":"exec",
+                     "working_directory":{
+
+                     },
+                     "command":"dir",
+                     "run_if":"passed"
+                  }
+               ],
+               "name":"defaultJob",
+               "tabs":[
+
+               ],
+               "artifacts":[
+
+               ],
+               "environment_variables":[
+
+               ],
+               "properties":{
+
+               },
+               "resources":[
+
+               ]
+            }
+         ]
+      }
+   ],
+   "name":"Test"
+}
