@@ -1,53 +1,18 @@
 {
   "name": "Second",
     "environment_variables": [
-        {
-            "name": "BATCH_SIZE",
-            "secure": false,
-            "value": "100"
-        },
-        {
-            "name": "OUTSYSTEMS_HOME_LINUX",
-            "secure": false,
-            "value": "/opt/outsystems/platform"
-        },
-        {
-            "name": "TESTS_JAVA_HOME",
-            "secure": false,
-            "value": "/etc/alternatives/java_sdk_1.8.0"
-        },
-        {
-            "name": "TESTS_CLASSPATH",
-            "secure": false,
-            "value": "./outsystems.hubedition.communication.jar:./outsystems.hubedition.pipeline.jar:./testscommon.jar:./javaservertests.jar:./runtimeplatform.unittests.jar:./outsystems.widgetsruntimeapi.jar:./servercommon.unittests.jar:./javaservertests.jar:./compilerservice.jar:./outsystems.packagemanager.jar:./configurationtool.jar:./deployservice.jar:./logserver.jar:./outsystems.viewframework.jar:./outsystems.hubedition.compiler.jar:./outsystems.clientruntime.jar:./outsystems.codegeneration.jar:./outsystems.modelplugins.jar:./outsystems.compilerapi.jar:./outsystems.compilerrestapi.jar:./plugins/compiler/*:./outsystems.activation.jar:./scheduler.jar:./scinstaller.jar:./outsystems.nosomlprocessor.jar:./junit-4.12.jar:./hamcrest-core-1.3.jar:./outsystems.junit.jar:./thirdparty/lib/*:/opt/outsystems/platform/lib/*:/opt/outsystems/platform/outsystems.hubedition.runtimeplatformutil.jar:/opt/outsystems/platform/outsystems.hubedition.runtimecommon.jar:/opt/outsystems/platform/outsystems.hubedition.common.jar:/opt/outsystems/platform/outsystems.hubedition.runtimeplatform.jar:/opt/outsystems/platform/outsystems.hubedition.databaseabstractionlayer.jar:/opt/outsystems/platform/plugins/database/*:/opt/outsystems/platform/plugins/database/internal/*:/opt/outsystems/platform/outsystems.hubedition.servercommon.jar:/opt/outsystems/platform/outsystems.runtimeservices.jar:/opt/outsystems/platform/lib/active.connectors/*:/etc/alternatives/java_sdk_1.8.0/lib/tools.jar:/opt/apache-ant-1.9.2/lib/ant.jar:./jackson-annotations.jar:./jackson-core.jar:./jackson-databind.jar:./javanrwidgets.karma.unittests.jar:./outsystems.rest.tests.jar:./outsystems.sap.tests.jar:./outsystems.plugin.viewframework.react.jar:./outsystems.plugin.viewframework.react.tests.jar:./outsystems.restservice.runtime.jar"
-        },
-        {
-            "name": "CI_PATH",
-            "secure": false,
-            "value": "/eSpace/QA/ContinuousIntegration/"
-        },
-        {
-            "name": "JACINTIA_WEB_SERVER",
-            "secure": false,
-            "value": "WILDFLY"
-        }
+        
     ],
-  "group" : "QA",
+  "group" : "ThatBranch",
     "materials": [
         {
-			"auto_update": true,
-			"check_externals": false,
-			"destination": "ContinuousIntegration",
-			"encrypted_password": "Rc2PSi18HbY=",
-			"filter": {
-				"ignore": [
-					"tools/**/*"
-				]
-			},
-			"name": "ContinuousIntegration",
-			"url": "https://srvptsvn.domain.outsystems.com/svn/rd/tools/branches/BuildPipeline_DEV/CINTIA",
-			"username": "extracvs",
-            "type": "svn"
+	   "auto_update": true,
+	   "check_externals": false,
+	   "destination": "ContinuousIntegration",
+	   "filter": null,
+	   "name": "ContinuousIntegration",
+	   "url": "https://github.com/nekrai/theone.git",
+	   "type": "git"
         }
     ],
   "stages": [
