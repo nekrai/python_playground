@@ -10,73 +10,12 @@ false
 ,
 "materials":
 [
-{
-"username":
-"extracvs"
-,
-"encrypted_password":
-"Rc2PSi18HbY="
-,
-"name":
-"PlatformCode"
-,
-"check_externals":
-false
-,
-"url":
-"https://srvptsvn.domain.outsystems.com/svn/rd/platform/branches/b10_0_0/"
-,
-"destination":
-"b10_0_0"
-,
-"filter":
-{
-"ignore":
-[
-"**/QA/Results/**/*"
-]
-}
-,
-"auto_update":
-true
-,
-"type":
-"svn"
-}
-,
-{
-"username":
-"extracvs"
-,
-"encrypted_password":
-"Rc2PSi18HbY="
-,
-"name":
-"ContinuousIntegration"
-,
-"check_externals":
-false
-,
-"url":
-"https://srvptsvn.domain.outsystems.com/svn/rd/tools/branches/BuildPipeline_DEV/CINTIA"
-,
-"destination":
-"ContinuousIntegration"
-,
-"filter":
-{
-"ignore":
-[
-"tools/**/*"
-]
-}
-,
-"auto_update":
-true
-,
-"type":
-"svn"
-}
+ {
+      "url": "https://github.com/tomzo/gocd-json-config-example.git",
+      "type": "git",
+      "name" : "mygit",
+      "destination" : "mydest"
+    }
 ]
 ,
 "environment_variables":
@@ -453,5 +392,5 @@ false
 ]
 ,
 "name":
-"Test23415"
+"Test212354"
 }
