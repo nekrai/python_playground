@@ -155,7 +155,7 @@ python go_cintia.py --firstrevision %GO_FROM_REVISION_PLATFORMCODE% --lastrevisi
 ]
 ,
 "type":
-"pluggable_task"
+"plugin"
 ,
 "run_if":
 "passed"
@@ -235,7 +235,7 @@ false
 ]
 ,
 "type":
-"pluggable_task"
+"plugin"
 ,
 "run_if":
 "passed"
@@ -402,7 +402,7 @@ false
 ]
 ,
 "type":
-"pluggable_task"
+"plugin"
 ,
 "run_if":
 "passed"
@@ -453,5 +453,5 @@ false
 ]
 ,
 "name":
-"Test2234"
+"Test2345"
 }
