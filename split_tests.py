@@ -1,6 +1,7 @@
 def init_job_tests(_): return 0, []
 
 
+
 def init_test_list(number_jobs):
     if number_jobs < 1:
         return []
