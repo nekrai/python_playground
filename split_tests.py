@@ -1,7 +1,6 @@
 def init_job_tests(_): return 0, []
 
 
-
 def init_test_list(number_jobs):
     if number_jobs < 1:
         return []
@@ -70,4 +69,3 @@ def split_tests(test_list, number_jobs):
     fix_test_list(final_test_list, number_jobs)
 
     return final_test_list
-
