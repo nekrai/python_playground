@@ -12,10 +12,6 @@ def get_all_files(folder):
                 listener.process(path, filename)
 
 
-def print_filename(path, filename):
-    print path, filename
-
-
 file_counter = generic_counters.FileType('.py')
 listeners.append(file_counter)
 
@@ -29,6 +25,7 @@ line_crawler.add_listener(line_counter)
 line_crawler.add_listener(todo_list)
 
 
-get_all_files("C:\\GitHub\\theone")
+get_all_files("C:\\PythonProjects\\Playground")
 
-todo_list.print_result()
+file_counter.print_result()
+line_crawler.print_result()
