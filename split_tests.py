@@ -8,7 +8,7 @@ def init_test_list(number_jobs):
 
 
 def get_total_time(test_list):
-    return sum([float(single_test['time']) for single_test in test_list])
+    return sum(float(single_test['time']) for single_test in test_list)
 
 
 def get_minimal_position(test_list, number_jobs):
