@@ -27,7 +27,6 @@ class LineCrawler:
 
     def process(self, path, filename):
         if filename.endswith(self.file_type):
-            i = 0
             with open(os.path.join(path, filename)) as f:
                 for i, l in enumerate(f, 1):
                     for listener in self.listeners:

@@ -6,11 +6,11 @@ class LineCounter:
         self.line_count = {}
 
     def process(self, path, filename, line_number, line_content):
-        key = os.path.join(path,filename)
+        key = os.path.join(path, filename)
         self.line_count[key] = line_number
 
     def result_file(self, path, filename):
-        return self.line_count[os.path.join(path,filename)]
+        return self.line_count[os.path.join(path, filename)]
 
     def result_all(self):
         return self.line_count
@@ -20,8 +20,8 @@ class LineCounter:
 
     def print_result(self):
         print self.description()
-        for file in self.line_count.keys():
-            print file, self.line_count[file]
+        for file_path in self.line_count.keys():
+            print file_path, self.line_count[file_path]
 
 
 class EmptyLineCounter(LineCounter):
