@@ -241,6 +241,60 @@ class TestSplitTests(unittest.TestCase):
         # assert
         self.assertEqual(expected, obtained)
 
+    def test_split_guarantees_balance(self):
+        import numpy
+        max_run_time = 50
+
+        test_list = [
+            create_test_element(x, lambda: random.randint(1, max_run_time))
+            for x in xrange(1000)
+        ]
+
+        # act
+        obtained = split_tests.split_tests(test_list, 3)[:-1]
+        standard_deviation = numpy.std([job[0] for job in obtained])
+
+        # assert
+        self.assertLessEqual(standard_deviation, max_run_time)
+
+    def test_split_guarantees_order(self):
+        # arrange
+        test_list = [
+            create_test_element(1, lambda: 2),
+            create_test_element(2, lambda: 4),
+            create_test_element(3, lambda: 1),
+            create_test_element(4, lambda: 3),
+            create_test_element(5, lambda: 1),
+            create_test_element(6, lambda: 5),
+            create_test_element(7, lambda: 2),
+            create_test_element(8, lambda: 4),
+            create_test_element(9, lambda: 1),
+            create_test_element(10, lambda: 3),
+            create_test_element(11, lambda: 2),
+            create_test_element(12, lambda: 5),
+            create_test_element(13, lambda: 1),
+            create_test_element(14, lambda: 3),
+            create_test_element(15, lambda: 5),
+            create_test_element(16, lambda: 5),
+            create_test_element(17, lambda: 2),
+            create_test_element(18, lambda: 4),
+            create_test_element(19, lambda: 1),
+            create_test_element(20, lambda: 2)
+        ]
+
+        expected = [
+            (18.0, ['test1', 'test2', 'test3', 'test4', 'test5', 'test6', 'test7']),
+            (16.0, ['test8', 'test9', 'test10', 'test11', 'test12', 'test13']),
+            (22.0, ['test14', 'test15', 'test16', 'test17', 'test18', 'test19', 'test20']),
+            (0, [])
+        ]
+
+        # act
+        obtained = split_tests.split_tests(test_list, 3)
+
+        # assert
+        self.assertEqual(expected, obtained)
+
     def test_preserves_test_list(self):
         # arrange
         test_list = [create_test_element(x, lambda: random.uniform(1, 10)) for x in range(100)]
