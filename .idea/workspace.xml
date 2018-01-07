@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d3556b13-b9f5-4002-812c-26259e0280a9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MachineLearning/Cancer - 1 - KNeighborsClassifier.ipynb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MachineLearning/Cancer - 2 - LogisticRegression.ipynb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MachineLearning/Cancer - 3 - Decision Trees.ipynb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MachineLearning/Cancer - 4 - Random Forests.ipynb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MachineLearning/Cancer - 5 - Neural Networks.ipynb" />
+    <list default="true" id="d3556b13-b9f5-4002-812c-26259e0280a9" name="Default" comment="Machine learning">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MachineLearning/Automatic Feature Selection.ipynb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MachineLearning/Cancer - 6 - Support Vector Machines.ipynb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MachineLearning/Cancer - 7 - Uncertantly Estimation.ipynb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MachineLearning/Iris - Uncertantly Estimation MultiClass.ipynb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MachineLearning/Label Encoding.ipynb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MachineLearning/Preprocessing Methods.ipynb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MachineLearning/Support Vector Machines.ipynb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MachineLearning/Uncertainly Estimation.ipynb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adult.data" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MachineLearning/Cancer - 1 - KNeighborsClassifier.ipynb" afterPath="$PROJECT_DIR$/MachineLearning/Cancer - 1 - KNeighborsClassifier.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MachineLearning/Cancer - 3 - Decision Trees.ipynb" afterPath="$PROJECT_DIR$/MachineLearning/Cancer - 3 - Decision Trees.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MachineLearning/Cancer - 5 - Neural Networks.ipynb" afterPath="$PROJECT_DIR$/MachineLearning/Cancer - 5 - Neural Networks.ipynb" />
     </list>
     <ignored path="theone.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,97 +33,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="1_simple_decision_tree.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MachineLearning/1_simple_decision_tree.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Cancer - 1 - KNeighborsClassifier.ipynb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/MachineLearning/Cancer - 1 - KNeighborsClassifier.ipynb">
+      <file leaf-file-name="Label Encoding.ipynb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MachineLearning/Label Encoding.ipynb">
           <provider selected="true" editor-type-id="ipnb-editor">
             <state>
-              <selected id="0" />
+              <selected id="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Cancer - 2 - LogisticRegression.ipynb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MachineLearning/Cancer - 2 - LogisticRegression.ipynb">
+      <file leaf-file-name="Automatic Feature Selection.ipynb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MachineLearning/Automatic Feature Selection.ipynb">
           <provider selected="true" editor-type-id="ipnb-editor">
             <state>
-              <selected id="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Cancer - 3 - Decision Trees.ipynb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MachineLearning/Cancer - 3 - Decision Trees.ipynb">
-          <provider selected="true" editor-type-id="ipnb-editor">
-            <state>
-              <selected id="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Cancer - 4 - Random Forests.ipynb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MachineLearning/Cancer - 4 - Random Forests.ipynb">
-          <provider selected="true" editor-type-id="ipnb-editor">
-            <state>
-              <selected id="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Cancer - 5 - Neural Networks.ipynb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MachineLearning/Cancer - 5 - Neural Networks.ipynb">
-          <provider selected="true" editor-type-id="ipnb-editor">
-            <state>
-              <selected id="0" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2_iris_classifiers.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MachineLearning/2_iris_classifiers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="5_iris_cross_val_score.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MachineLearning/5_iris_cross_val_score.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="3_sales_linear.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MachineLearning/3_sales_linear.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="4_sales_cross_val_score.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MachineLearning/4_sales_cross_val_score.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding />
+              <selected id="1" />
             </state>
           </provider>
         </entry>
@@ -160,16 +90,25 @@
         <option value="$PROJECT_DIR$/MachineLearning/first.py" />
         <option value="$PROJECT_DIR$/MachineLearning/2_iris_classifiers.py" />
         <option value="$PROJECT_DIR$/MachineLearning/tryout.ipynb" />
-        <option value="$PROJECT_DIR$/MachineLearning/Cancer - 2 - LogisticRegression.ipynb" />
-        <option value="$PROJECT_DIR$/MachineLearning/Cancer - 4 - Random Forests.ipynb" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/MachineLearning/test.ipynb" />
         <option value="$PROJECT_DIR$/MachineLearning/Cancer - 1 - KNeighborsClassifier.ipynb" />
+        <option value="$PROJECT_DIR$/MachineLearning/Cancer - 2 - LogisticRegression.ipynb" />
         <option value="$PROJECT_DIR$/MachineLearning/Cancer - 3 - Decision Trees.ipynb" />
+        <option value="$PROJECT_DIR$/MachineLearning/Cancer - 5 - Neural Networks.ipynb" />
+        <option value="$PROJECT_DIR$/MachineLearning/Cancer - 4 - Random Forests.ipynb" />
+        <option value="$PROJECT_DIR$/MachineLearning/Support Vector Machines.ipynb" />
+        <option value="$PROJECT_DIR$/MachineLearning/Uncertainly Estimation.ipynb" />
+        <option value="$PROJECT_DIR$/MachineLearning/Iris - Uncertantly Estimation MultiClass.ipynb" />
+        <option value="$PROJECT_DIR$/MachineLearning/Preprocessing Methods.ipynb" />
+        <option value="$PROJECT_DIR$/MachineLearning/Automatic Feature Selection.ipynb" />
+        <option value="$PROJECT_DIR$/MachineLearning/Label Encoding.ipynb" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="974" />
+    <option name="x" value="895" />
+    <option name="width" value="1032" />
     <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -190,6 +129,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -206,8 +147,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -215,12 +154,14 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\PythonProjects\Playground\branch_analysis" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\PythonProjects\python_playground\MachineLearning" />
       <recent name="C:\PythonProjects\python_playground" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\PythonProjects\python_playground" />
+      <recent name="C:\PythonProjects\python_playground\MachineLearning" />
+      <recent name="C:\PythonProjects\Playground\branch_analysis" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -678,7 +619,14 @@
       <option name="project" value="LOCAL" />
       <updated>1515354181829</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Machine learning">
+      <created>1515354265133</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1515354265134</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -725,18 +673,19 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13219616" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36300638" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27470142" sideWeight="0.50656456" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27204302" sideWeight="0.49343544" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33010754" sideWeight="0.49562362" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33010754" sideWeight="0.49562362" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32795697" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24972856" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32795697" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934713" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27204302" sideWeight="0.49343544" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2489712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32790446" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934713" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -744,6 +693,16 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -802,68 +761,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/branch_analysis/line_counters.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="56" column="61" lean-forward="false" selection-start-line="56" selection-start-column="61" selection-end-line="56" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/branch_analysis/branch_analysis.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/alert_me.py" />
-    <entry file="file://$PROJECT_DIR$/test_alert.py" />
-    <entry file="file://$PROJECT_DIR$/split_tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="23" column="42" lean-forward="false" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_split.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="208" column="0" lean-forward="false" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/branch_analysis/branch_analysis.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/branch_analysis/generic_counters.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/alert_me.py" />
-    <entry file="file://$PROJECT_DIR$/test_alert.py" />
-    <entry file="file://$PROJECT_DIR$/split_tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="23" column="42" lean-forward="false" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_split.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/alert_me.py" />
-    <entry file="file://$PROJECT_DIR$/test_alert.py" />
     <entry file="file://$PROJECT_DIR$/split_tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -956,13 +853,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/split_tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/branch_analysis/branch_analysis.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -996,7 +886,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1004,23 +893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MachineLearning/4_sales_cross_val_score.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MachineLearning/5_iris_cross_val_score.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1028,11 +900,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MachineLearning/tryout.ipynb" />
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="20" lean-forward="true" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/split_tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachineLearning/5_iris_cross_val_score.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachineLearning/4_sales_cross_val_score.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachineLearning/cancertree.png" />
+    <entry file="file://$PROJECT_DIR$/cancertree4.dot" />
+    <entry file="file://$PROJECT_DIR$/cancertree.dot" />
+    <entry file="file://$PROJECT_DIR$/MachineLearning/test.ipynb" />
+    <entry file="file://$PROJECT_DIR$/MachineLearning/cancertree.png" />
+    <entry file="file://$PROJECT_DIR$/MachineLearning/Cancer - 1 - KNeighborsClassifier.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MachineLearning/Cancer - 2 - LogisticRegression.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
@@ -1040,31 +951,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MachineLearning/Cancer - 5 - Neural Networks.ipynb">
+    <entry file="file://$PROJECT_DIR$/MachineLearning/Cancer - 3 - Decision Trees.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
           <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python36/Lib/site-packages/sklearn/neural_network/multilayer_perceptron.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="683" column="6" lean-forward="false" selection-start-line="683" selection-start-column="6" selection-end-line="683" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachineLearning/Cancer - 5 - Neural Networks.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MachineLearning/Cancer - 4 - Random Forests.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
-          <selected id="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MachineLearning/Cancer - 3 - Decision Trees.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MachineLearning/Cancer - 1 - KNeighborsClassifier.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
           <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachineLearning/Iris - Uncertantly Estimation MultiClass.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachineLearning/Cancer - 6 - Support Vector Machines.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachineLearning/Cancer - 7 - Uncertantly Estimation.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python36/Lib/site-packages/sklearn/preprocessing/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachineLearning/Preprocessing Methods.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachineLearning/Label Encoding.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachineLearning/Automatic Feature Selection.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="2" />
         </state>
       </provider>
     </entry>
