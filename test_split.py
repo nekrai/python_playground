@@ -290,6 +290,7 @@ class TestSplitTests(unittest.TestCase):
         ]
 
         # act
+
         obtained = split_tests.split_tests(test_list, 3)
 
         # assert
