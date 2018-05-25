@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d3556b13-b9f5-4002-812c-26259e0280a9" name="Default" comment="Machine learning">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/theone.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/theone.iml" afterDir="false" />
+    <list default="true" id="d3556b13-b9f5-4002-812c-26259e0280a9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_split.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_split.py" afterDir="false" />
     </list>
     <ignored path="theone.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,8 +43,8 @@
       <file leaf-file-name="test_split.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_split.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="294" column="17" selection-start-line="294" selection-start-column="17" selection-end-line="294" selection-end-column="17" />
+            <state relative-caret-position="252">
+              <caret line="291" column="14" selection-start-line="291" selection-start-column="14" selection-end-line="291" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -616,7 +615,14 @@
       <option name="project" value="LOCAL" />
       <updated>1515354265134</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Pycharm project update">
+      <created>1527257316170</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1527257316170</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -664,11 +670,11 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15595363" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15595363" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32899022" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50656456" side_tool="true" weight="0.27470142" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49343544" weight="0.27204302" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49562362" visible="true" weight="0.32960895" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.49562362" visible="true" weight="0.2" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32795697" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.2489712" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32790446" />
@@ -743,7 +749,8 @@
     <MESSAGE value="Stuff" />
     <MESSAGE value="Added test for balance" />
     <MESSAGE value="Machine learning" />
-    <option name="LAST_COMMIT_MESSAGE" value="Machine learning" />
+    <MESSAGE value="Pycharm project update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pycharm project update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -975,8 +982,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test_split.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="294" column="17" selection-start-line="294" selection-start-column="17" selection-end-line="294" selection-end-column="17" />
+        <state relative-caret-position="252">
+          <caret line="291" column="14" selection-start-line="291" selection-start-column="14" selection-end-line="291" selection-end-column="14" />
         </state>
       </provider>
     </entry>
