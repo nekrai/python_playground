@@ -7,7 +7,6 @@ def create_test_element(x, set_time): return {'name': 'test' + str(x), 'time': s
 
 
 class TestInitTestList(unittest.TestCase):
-    # def init_test_list(number_jobs)
 
     def test_less_than_one_job(self):
         # act
