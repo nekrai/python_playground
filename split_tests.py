@@ -22,6 +22,7 @@ def get_minimal_position(test_list, number_jobs):
 
 
 def fix_test_list(test_list, number_jobs):
+    # this fixes the test list
     if not test_list:
         return
     if len(test_list) != number_jobs + 1:
