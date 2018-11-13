@@ -3,6 +3,7 @@ import os
 import json
 
 go_server = 'http://localhost:8153'
+json_indent = 2
 
 
 def get_environment(environment_path, environment_name):
@@ -18,7 +19,7 @@ def get_environment(environment_path, environment_name):
     del environment['agents']
 
     with open(os.path.join(environment_path, environment_name+'.json'), 'w') as environment_file:
-        json.dump(environment, environment_file, indent=4)
+        json.dump(environment, environment_file, indent=json_indent)
 
     with open(os.path.join(environment_path, environment_name + '.etag'), 'w') as environment_etag_file:
         json.dump(res.headers['etag'], environment_etag_file)
@@ -66,10 +67,10 @@ def get_pipeline(environment_path, pipeline_name):
         os.mkdir(pipeline_path)
 
     with open(os.path.join(pipeline_path, pipeline_name+'.json'), 'w') as pipeline_file:
-        json.dump(pipeline, pipeline_file, indent=4)
+        json.dump(pipeline, pipeline_file, indent=json_indent)
 
     with open(os.path.join(pipeline_path, pipeline_name+'.etag'), 'w') as pipeline_etag_file:
-        json.dump(res.headers['etag'], pipeline_etag_file, indent=4)
+        json.dump(res.headers['etag'], pipeline_etag_file, indent=json_indent)
 
 
 def get_templates():
@@ -106,10 +107,10 @@ def get_template(templates_path, template_name):
         os.mkdir(template_path)
 
     with open(os.path.join(template_path, template_name+'.json'), 'w') as template_file:
-        json.dump(template, template_file, indent=4)
+        json.dump(template, template_file, indent=json_indent)
 
     with open(os.path.join(template_path, template_name+'.etag'), 'w') as pipeline_etag_file:
-        json.dump(res.headers['etag'], pipeline_etag_file, indent=4)
+        json.dump(res.headers['etag'], pipeline_etag_file, indent=json_indent)
 
 
 if __name__ == '__main__':
