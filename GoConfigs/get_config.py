@@ -2,7 +2,26 @@ import requests
 import os
 import json
 
-go_server = 'http://GOSERVER'
+go_server = 'http://localhost:8153'
+
+
+def get_environment(environment_path, environment_name):
+    environment_api = '/go/api/admin/environments/{environment_name}'
+
+    accept = 'application/vnd.go.cd.v2+json'
+    headers = {'Accept': accept}
+
+    res = requests.get(go_server + environment_api.format(environment_name=environment_name), headers=headers)
+    environment = res.json()
+    del environment['pipelines']
+    del environment['_links']
+    del environment['agents']
+
+    with open(os.path.join(environment_path, environment_name+'.json'), 'w') as environment_file:
+        json.dump(environment, environment_file, indent=4)
+
+    with open(os.path.join(environment_path, environment_name + '.etag'), 'w') as environment_etag_file:
+        json.dump(res.headers['etag'], environment_etag_file)
 
 
 def get_environments():
@@ -20,8 +39,11 @@ def get_environments():
     for environment in environments:
         environment_name = environment['name']
         environment_path = os.path.join('environments', environment_name)
+
         if not os.path.exists(environment_path):
             os.mkdir(os.path.join('environments', environment_name))
+
+        get_environment(environment_path, environment_name)
 
         for pipeline in environment['pipelines']:
             get_pipeline(environment_path, pipeline['name'])
@@ -35,9 +57,19 @@ def get_pipeline(environment_path, pipeline_name):
 
     res = requests.get(go_server + pipelines_api.format(pipeline_name=pipeline_name), headers=headers)
     pipeline = res.json()
+    del pipeline['origin']
+    del pipeline['_links']
 
-    with open(os.path.join(environment_path, pipeline_name+'.json'), 'w') as pipeline_file:
+    pipeline_path = os.path.join(environment_path, pipeline_name)
+
+    if not os.path.exists(pipeline_path):
+        os.mkdir(pipeline_path)
+
+    with open(os.path.join(pipeline_path, pipeline_name+'.json'), 'w') as pipeline_file:
         json.dump(pipeline, pipeline_file, indent=4)
+
+    with open(os.path.join(pipeline_path, pipeline_name+'.etag'), 'w') as pipeline_etag_file:
+        json.dump(res.headers['etag'], pipeline_etag_file, indent=4)
 
 
 def get_templates():
@@ -66,10 +98,20 @@ def get_template(templates_path, template_name):
 
     res = requests.get(go_server + template_api.format(template_name=template_name), headers=headers)
     template = res.json()
+    del template['_links']
 
-    with open(os.path.join(templates_path, template['name']+'.json'), 'w') as template_file:
+    template_path = os.path.join(templates_path, template_name)
+
+    if not os.path.exists(template_path):
+        os.mkdir(template_path)
+
+    with open(os.path.join(template_path, template_name+'.json'), 'w') as template_file:
         json.dump(template, template_file, indent=4)
 
+    with open(os.path.join(template_path, template_name+'.etag'), 'w') as pipeline_etag_file:
+        json.dump(res.headers['etag'], pipeline_etag_file, indent=4)
 
-get_templates()
 
+if __name__ == '__main__':
+    get_environments()
+    get_templates()
