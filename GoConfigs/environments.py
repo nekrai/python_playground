@@ -3,7 +3,7 @@ import os
 import json
 from get_config import get_environment
 
-from constants import go_server, environment_api, environment_get_headers, environment_patch_headers
+from constants import go_server, environment_api, environments_api, environment_get_headers, environment_patch_headers, environment_post_headers, environment_delete_headers
 
 
 def get_etag(environment_name):
@@ -40,8 +40,8 @@ def validate_etag(environment_name):
 def update_environment(environment_name):
     environment_path = os.path.join('environments', environment_name)
 
-    with open(os.path.join(environment_path, environment_name + '.json'), 'r') as template_file:
-        environment = json.load(template_file)
+    with open(os.path.join(environment_path, environment_name + '.json'), 'r') as environment_file:
+        environment = json.load(environment_file)
 
     environment_variables_add = {
         "environment_variables": {
@@ -60,8 +60,33 @@ def update_environment(environment_name):
         print res.text
 
 
+def create_environment(environment_name):
+    environment_path = os.path.join('environments', environment_name)
+
+    if not os.path.exists(environment_path):
+        raise Exception('Environment configuration not found!')
+
+    with open(os.path.join(environment_path, environment_name + '.json'), 'r') as environment_file:
+        environment = json.load(environment_file)
+
+    res = requests.post(go_server + environments_api, data=json.dumps(environment), headers=environment_post_headers)
+    if res.status_code == 200:
+        print 'Environment {} created successfully. Refreshing ETag.'.format(environment_name)
+        get_environment(environment_path, environment_name)
+    else:
+        print res.text
+
+
+def delete_environment(environment_name):
+    res = requests.delete(go_server + environment_api.format(environment_name=environment_name), headers=environment_delete_headers)
+    if res.status_code == 200:
+        print 'Environment {} deleted successfully.'.format(environment_name)
+    else:
+        print res.text
+
+
 if __name__ == '__main__':
-    update_environment('ExampleEnv')
+    create_environment('AnotherEnv')
 
 
 def add_pipeline_to_environment(environment_name, pipeline_name):

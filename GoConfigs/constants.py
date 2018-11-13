@@ -1,6 +1,7 @@
 go_server = 'http://localhost:8153'
 
-environment_api = '/go/api/admin/environments/{environment_name}'
+environments_api = '/go/api/admin/environments'
+environment_api = environments_api + '/{environment_name}'
 
 environment_get_accept = 'application/vnd.go.cd.v2+json'
 environment_get_headers = {'Accept': environment_get_accept}
@@ -8,6 +9,18 @@ environment_get_headers = {'Accept': environment_get_accept}
 environment_patch_accept = 'application/vnd.go.cd.v2+json'
 environment_patch_headers = {
     'Accept': environment_patch_accept,
+    'Content-Type': 'application/json'
+}
+
+environment_post_accept = 'application/vnd.go.cd.v2+json'
+environment_post_headers = {
+    'Accept': environment_post_accept,
+    'Content-Type': 'application/json'
+}
+
+environment_delete_accept = 'application/vnd.go.cd.v2+json'
+environment_delete_headers = {
+    'Accept': environment_delete_accept,
     'Content-Type': 'application/json'
 }
 

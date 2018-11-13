@@ -28,8 +28,8 @@ def validate_etag(environment_path, pipeline_name):
     return etag
 
 
-def update_pipeline(pipeline_name):
-    environment_path = os.path.join('environments', 'ExampleEnv')
+def update_pipeline(environment_name, pipeline_name):
+    environment_path = os.path.join('environments', environment_name)
 
     with open(os.path.join(environment_path, pipeline_name, pipeline_name + '.json'), 'r') as pipeline_file:
         pipeline = json.load(pipeline_file)
@@ -73,10 +73,10 @@ def delete_pipeline(environment_name, pipeline_name):
     res = requests.delete(go_server + pipeline_api.format(pipeline_name=pipeline_name), headers=pipeline_delete_headers)
     print res
     if res.status_code == 200:
-        print 'Pipeline ' + pipeline_name + ' removed successfully.'
+        print 'Pipeline {} deleted successfully.'.format(pipeline_name)
     else:
         print res.text
 
 
 if __name__ == '__main__':
-    delete_pipeline('ExampleEnv', 'Pires')
+    delete_pipeline('AnotherEnv', 'Pires')
