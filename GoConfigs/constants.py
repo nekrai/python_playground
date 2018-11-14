@@ -1,3 +1,5 @@
+json_indent = 2
+
 go_server = 'http://localhost:8153'
 
 versions = {

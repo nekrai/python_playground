@@ -5,11 +5,7 @@ from repositories import replace_repositories_in_pipeline
 from variables import replace_variables_in
 from parameters import replace_parameters_in
 from constants import environment_api, environments_api, pipeline_api, templates_api, template_api, \
-    environment_headers, pipeline_headers, template_headers
-
-
-go_server = 'http://localhost:8153'
-json_indent = 2
+    environment_headers, pipeline_headers, template_headers, go_server, json_indent
 
 
 def get_environment(environment_path, environment_name):
