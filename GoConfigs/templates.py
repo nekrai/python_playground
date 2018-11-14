@@ -2,12 +2,12 @@ import requests
 import os
 import json
 from get_config import get_template
-from constants import go_server, template_api, templates_api, template_get_headers, template_post_headers, template_put_headers, template_delete_headers
+from constants import go_server, template_api, templates_api, template_headers
 from variables import restore_variables_in
 
 
 def get_etag(template_name):
-    res = requests.get(go_server + template_api.format(template_name=template_name), headers=template_get_headers)
+    res = requests.get(go_server + template_api.format(template_name=template_name), headers=template_headers['get'])
     if res.status_code != 200:
         raise Exception('Could not get etag for template ' + template_name)
 
@@ -44,9 +44,9 @@ def read_and_restore(template_path, template_name):
 def update_template(template_name):
     template_path = os.path.join('templates', template_name)
     template = read_and_restore(template_path, template_name)
-    template_put_headers['If-Match'] = validate_etag(template_name)
+    template_headers['put']['If-Match'] = validate_etag(template_name)
 
-    res = requests.put(go_server + template_api.format(template_name=template_name), data=json.dumps(template), headers=template_put_headers)
+    res = requests.put(go_server + template_api.format(template_name=template_name), data=json.dumps(template), headers=template_headers['put'])
     if res.status_code == 200:
         print 'Template ' + template_name + ' updated successfully. Refreshing ETag.'
         get_template('templates', template_name)
@@ -58,7 +58,7 @@ def create_template(template_name):
     template_path = os.path.join('templates', template_name)
     template = read_and_restore(template_path, template_name)
 
-    res = requests.post(go_server + templates_api, data=json.dumps(template), headers=template_post_headers)
+    res = requests.post(go_server + templates_api, data=json.dumps(template), headers=template_headers['post'])
     if res.status_code == 200:
         print 'Template ' + template_name + ' created successfully. Refreshing ETag.'
         get_template('templates', template_name)
@@ -67,7 +67,7 @@ def create_template(template_name):
 
 
 def delete_template(template_name):
-    res = requests.delete(go_server + template_api.format(template_name=template_name), headers=template_delete_headers)
+    res = requests.delete(go_server + template_api.format(template_name=template_name), headers=template_headers['del'])
 
     if res.status_code == 200:
         print 'Template ' + template_name + ' deleted successfully.'
