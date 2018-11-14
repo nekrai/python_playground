@@ -72,16 +72,14 @@ def get_templates():
     res = requests.get(templates_api, headers=template_headers['get'])
     templates = res.json()['_embedded']['templates']
 
-    templates_path = 'templates'
-
-    if not os.path.exists(templates_path):
-        os.mkdir(templates_path)
+    if not os.path.exists('templates'):
+        os.mkdir('templates')
 
     for template in templates:
-        get_template(templates_path, template['name'])
+        get_template(template['name'])
 
 
-def get_template(templates_path, template_name):
+def get_template(template_name):
     res = requests.get(templates_api + template_name, headers=template_headers['get'])
     template = res.json()
 
@@ -93,7 +91,7 @@ def get_template(templates_path, template_name):
         for job in stage['jobs']:
             replace_variables_in(job)
 
-    template_path = os.path.join(templates_path, template_name)
+    template_path = os.path.join('templates', template_name)
 
     if not os.path.exists(template_path):
         os.mkdir(template_path)

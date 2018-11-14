@@ -50,7 +50,7 @@ def update_environment(environment_name):
     environment_path = os.path.join('environments', environment_name)
     environment = read_and_restore_environment(environment_path, environment_name)
 
-    environment_variables_add = {
+    environment_variables = {
         "environment_variables": {
             "add": environment['environment_variables'],
             "remove": get_environment_variables(environment_name)
@@ -59,7 +59,7 @@ def update_environment(environment_name):
 
     validate_etag(environment_name)
 
-    res = requests.patch(environments_api + environment_name, data=json.dumps(environment_variables_add), headers=environment_headers['patch'])
+    res = requests.patch(environments_api + environment_name, data=json.dumps(environment_variables), headers=environment_headers['patch'])
     if res.status_code == 200:
         print 'Environment {} updated successfully. Refreshing ETag.'.format(environment_name)
         get_environment(environment_path, environment_name)

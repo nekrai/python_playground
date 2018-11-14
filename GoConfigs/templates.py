@@ -49,7 +49,7 @@ def update_template(template_name):
     res = requests.put(templates_api + template_name, data=json.dumps(template), headers=template_headers['put'])
     if res.status_code == 200:
         print 'Template ' + template_name + ' updated successfully. Refreshing ETag.'
-        get_template('templates', template_name)
+        get_template(template_name)
     else:
         print res, res.text
 
@@ -61,7 +61,7 @@ def create_template(template_name):
     res = requests.post(templates_api, data=json.dumps(template), headers=template_headers['post'])
     if res.status_code == 200:
         print 'Template ' + template_name + ' created successfully. Refreshing ETag.'
-        get_template('templates', template_name)
+        get_template(template_name)
     else:
         print res, res.text
 

@@ -88,4 +88,3 @@ if __name__ == '__main__':
     update_pipeline('ExampleEnv', 'Mario')
     create_pipeline('ExampleEnv', 'Pires')
     delete_pipeline('ExampleEnv', 'Pires')
-
