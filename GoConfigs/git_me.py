@@ -10,4 +10,4 @@ repo.add('C:\\PythonProjects\\python_playground\\GoConfigs\\git_me.py')
 
 index.commit("another commit from python!")
 
-repo.push("push from python!")
+repo.push("https://github.com/nekrai/python_playground.git")
