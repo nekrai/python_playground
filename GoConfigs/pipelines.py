@@ -4,6 +4,8 @@ import json
 from get_config import get_pipeline
 from environments import add_pipeline_to_environment, remove_pipeline_from_environment
 from constants import go_server, pipelines_api, pipeline_api, pipeline_delete_headers, pipeline_get_headers, pipeline_post_headers, pipeline_put_headers
+from repositories import restore_repositories_in_pipeline
+from variables import restore_variables_in
 
 
 def get_etag(pipeline_name):
@@ -33,6 +35,9 @@ def update_pipeline(environment_name, pipeline_name):
 
     with open(os.path.join(environment_path, pipeline_name, pipeline_name + '.json'), 'r') as pipeline_file:
         pipeline = json.load(pipeline_file)
+
+    restore_repositories_in_pipeline(pipeline)
+    restore_variables_in(pipeline)
 
     pipeline_put_headers['If-Match'] = validate_etag(environment_path, pipeline_name)
 
@@ -79,4 +84,4 @@ def delete_pipeline(environment_name, pipeline_name):
 
 
 if __name__ == '__main__':
-    delete_pipeline('AnotherEnv', 'Pires')
+    update_pipeline('ExampleEnv', 'Mario')

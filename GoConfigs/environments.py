@@ -2,7 +2,7 @@ import requests
 import os
 import json
 from get_config import get_environment
-
+from variables import restore_variables_in
 from constants import go_server, environment_api, environments_api, environment_get_headers, environment_patch_headers, environment_post_headers, environment_delete_headers
 
 
@@ -43,6 +43,8 @@ def update_environment(environment_name):
     with open(os.path.join(environment_path, environment_name + '.json'), 'r') as environment_file:
         environment = json.load(environment_file)
 
+    restore_variables_in(environment)
+
     environment_variables_add = {
         "environment_variables": {
             "add": environment['environment_variables'],
@@ -69,6 +71,8 @@ def create_environment(environment_name):
     with open(os.path.join(environment_path, environment_name + '.json'), 'r') as environment_file:
         environment = json.load(environment_file)
 
+    restore_variables_in(environment)
+
     res = requests.post(go_server + environments_api, data=json.dumps(environment), headers=environment_post_headers)
     if res.status_code == 200:
         print 'Environment {} created successfully. Refreshing ETag.'.format(environment_name)
@@ -86,7 +90,7 @@ def delete_environment(environment_name):
 
 
 if __name__ == '__main__':
-    create_environment('AnotherEnv')
+    update_environment('ExampleEnv')
 
 
 def add_pipeline_to_environment(environment_name, pipeline_name):

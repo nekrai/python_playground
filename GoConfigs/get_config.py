@@ -1,22 +1,25 @@
 import requests
 import os
 import json
+from repositories import replace_repositories_in_pipeline
+from variables import replace_variables_in
+from constants import environment_api, environments_api, pipeline_api, templates_api, template_api, \
+    environment_get_headers, environments_get_headers, pipeline_get_headers, templates_get_headers, template_get_headers
+
 
 go_server = 'http://localhost:8153'
 json_indent = 2
 
 
 def get_environment(environment_path, environment_name):
-    environment_api = '/go/api/admin/environments/{environment_name}'
-
-    accept = 'application/vnd.go.cd.v2+json'
-    headers = {'Accept': accept}
-
-    res = requests.get(go_server + environment_api.format(environment_name=environment_name), headers=headers)
+    res = requests.get(go_server + environment_api.format(environment_name=environment_name), headers=environment_get_headers)
     environment = res.json()
+
     del environment['pipelines']
     del environment['_links']
     del environment['agents']
+
+    replace_variables_in(environment)
 
     with open(os.path.join(environment_path, environment_name+'.json'), 'w') as environment_file:
         json.dump(environment, environment_file, indent=json_indent)
@@ -26,12 +29,7 @@ def get_environment(environment_path, environment_name):
 
 
 def get_environments():
-    environments_api = '/go/api/admin/environments'
-
-    accept = 'application/vnd.go.cd.v2+json'
-    headers = {'Accept': accept}
-
-    res = requests.get(go_server + environments_api, headers=headers)
+    res = requests.get(go_server + environments_api, headers=environments_get_headers)
     environments = res.json()['_embedded']['environments']
 
     if not os.path.exists('environments'):
@@ -51,15 +49,14 @@ def get_environments():
 
 
 def get_pipeline(environment_path, pipeline_name):
-    pipelines_api = '/go/api/admin/pipelines/{pipeline_name}'
-
-    accept = 'application/vnd.go.cd.v6+json'
-    headers = {'Accept': accept}
-
-    res = requests.get(go_server + pipelines_api.format(pipeline_name=pipeline_name), headers=headers)
+    res = requests.get(go_server + pipeline_api.format(pipeline_name=pipeline_name), headers=pipeline_get_headers)
     pipeline = res.json()
+
     del pipeline['origin']
     del pipeline['_links']
+
+    replace_repositories_in_pipeline(pipeline)
+    replace_variables_in(pipeline)
 
     pipeline_path = os.path.join(environment_path, pipeline_name)
 
@@ -74,12 +71,7 @@ def get_pipeline(environment_path, pipeline_name):
 
 
 def get_templates():
-    templates_api = '/go/api/admin/templates'
-
-    accept = 'application/vnd.go.cd.v4+json'
-    headers = {'Accept': accept}
-
-    res = requests.get(go_server + templates_api, headers=headers)
+    res = requests.get(go_server + templates_api, headers=templates_get_headers)
     templates = res.json()['_embedded']['templates']
 
     templates_path = 'templates'
@@ -92,14 +84,16 @@ def get_templates():
 
 
 def get_template(templates_path, template_name):
-    template_api = '/go/api/admin/templates/{template_name}'
-
-    accept = 'application/vnd.go.cd.v4+json'
-    headers = {'Accept': accept}
-
-    res = requests.get(go_server + template_api.format(template_name=template_name), headers=headers)
+    res = requests.get(go_server + template_api.format(template_name=template_name), headers=template_get_headers)
     template = res.json()
+
     del template['_links']
+
+    for stage in template['stages']:
+        replace_variables_in(stage)
+
+        for job in stage['jobs']:
+            replace_variables_in(job)
 
     template_path = os.path.join(templates_path, template_name)
 

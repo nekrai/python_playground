@@ -3,6 +3,9 @@ go_server = 'http://localhost:8153'
 environments_api = '/go/api/admin/environments'
 environment_api = environments_api + '/{environment_name}'
 
+environments_get_accept = 'application/vnd.go.cd.v2+json'
+environments_get_headers = {'Accept': environments_get_accept}
+
 environment_get_accept = 'application/vnd.go.cd.v2+json'
 environment_get_headers = {'Accept': environment_get_accept}
 
@@ -47,6 +50,9 @@ pipeline_delete_headers = {'Accept': pipeline_get_accept}
 
 templates_api = '/go/api/admin/templates'
 template_api = templates_api + '/{template_name}'
+
+templates_get_accept = 'application/vnd.go.cd.v4+json'
+templates_get_headers = {'Accept': templates_get_accept}
 
 template_get_accept = 'application/vnd.go.cd.v4+json'
 template_get_headers = {'Accept': template_get_accept}

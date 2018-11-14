@@ -3,6 +3,7 @@ import os
 import json
 from get_config import get_template
 from constants import go_server, template_api, templates_api, template_get_headers, template_post_headers, template_put_headers, template_delete_headers
+from variables import restore_variables_in
 
 
 def get_etag(template_name):
@@ -33,9 +34,14 @@ def update_template(template_name):
     with open(os.path.join(template_path, template_name + '.json'), 'r') as template_file:
         template = json.load(template_file)
 
+    for stage in template['stages']:
+        restore_variables_in(stage)
+
+        for job in stage['jobs']:
+            restore_variables_in(job)
+
     template_put_headers['If-Match'] = validate_etag(template_name)
     res = requests.put(go_server + template_api.format(template_name=template_name), data=json.dumps(template), headers=template_put_headers)
-
     if res.status_code == 200:
         print 'Template ' + template_name + ' updated successfully. Refreshing ETag.'
         get_template('templates', template_name)
@@ -49,9 +55,13 @@ def create_template(template_name):
     with open(os.path.join(template_path, template_name + '.json'), 'r') as template_file:
         template = json.load(template_file)
 
-    res = requests.post(go_server + templates_api, data=json.dumps(template), headers=template_post_headers)
-    print res
+    for stage in template['stages']:
+        restore_variables_in(stage)
 
+        for job in stage['jobs']:
+            restore_variables_in(job)
+
+    res = requests.post(go_server + templates_api, data=json.dumps(template), headers=template_post_headers)
     if res.status_code == 200:
         print 'Template ' + template_name + ' created successfully. Refreshing ETag.'
         get_template('templates', template_name)
@@ -69,4 +79,4 @@ def delete_template(template_name):
         print res.text
 
 
-create_template('AnotherTemplate')
+update_template('TempTemp')
