@@ -3,6 +3,7 @@ import os
 import json
 from repositories import replace_repositories_in_pipeline
 from variables import replace_variables_in
+from parameters import replace_parameters_in
 from constants import environment_api, environments_api, pipeline_api, templates_api, template_api, \
     environment_get_headers, environments_get_headers, pipeline_get_headers, templates_get_headers, template_get_headers
 
@@ -57,6 +58,7 @@ def get_pipeline(environment_path, pipeline_name):
 
     replace_repositories_in_pipeline(pipeline)
     replace_variables_in(pipeline)
+    replace_parameters_in(pipeline)
 
     pipeline_path = os.path.join(environment_path, pipeline_name)
 

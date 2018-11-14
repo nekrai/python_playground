@@ -1,11 +1,13 @@
 import requests
 import os
 import json
+
 from get_config import get_pipeline
 from environments import add_pipeline_to_environment, remove_pipeline_from_environment
 from constants import go_server, pipelines_api, pipeline_api, pipeline_delete_headers, pipeline_get_headers, pipeline_post_headers, pipeline_put_headers
 from repositories import restore_repositories_in_pipeline
 from variables import restore_variables_in
+from parameters import restore_parameters_in
 
 
 def get_etag(pipeline_name):
@@ -38,6 +40,7 @@ def update_pipeline(environment_name, pipeline_name):
 
     restore_repositories_in_pipeline(pipeline)
     restore_variables_in(pipeline)
+    restore_parameters_in(pipeline)
 
     pipeline_put_headers['If-Match'] = validate_etag(environment_path, pipeline_name)
 
@@ -56,13 +59,16 @@ def create_pipeline(environment_name, pipeline_name):
     with open(os.path.join(environment_path, pipeline_name, pipeline_name + '.json'), 'r') as pipeline_file:
         pipeline = json.load(pipeline_file)
 
+    restore_repositories_in_pipeline(pipeline)
+    restore_variables_in(pipeline)
+    restore_parameters_in(pipeline)
+
     pipeline_group = {
         'group': environment_name,
         'pipeline': pipeline
     }
 
     res = requests.post(go_server + pipelines_api, data=json.dumps(pipeline_group), headers=pipeline_post_headers)
-
     if res.status_code == 200:
         print 'Pipeline {} created successfully. Refreshing ETag.'.format(pipeline_name)
         get_pipeline(environment_path, pipeline_name)
