@@ -4,12 +4,12 @@ import json
 from repositories import replace_repositories_in_pipeline
 from variables import replace_variables_in
 from parameters import replace_parameters_in
-from constants import environment_api, environments_api, pipeline_api, templates_api, template_api, \
-    environment_headers, pipeline_headers, template_headers, go_server, json_indent
+from constants import environments_api, pipelines_api, templates_api, \
+    environment_headers, pipeline_headers, template_headers, json_indent
 
 
 def get_environment(environment_path, environment_name):
-    res = requests.get(go_server + environment_api.format(environment_name=environment_name), headers=environment_headers['get'])
+    res = requests.get(environments_api + environment_name, headers=environment_headers['get'])
     environment = res.json()
 
     del environment['pipelines']
@@ -26,7 +26,7 @@ def get_environment(environment_path, environment_name):
 
 
 def get_environments():
-    res = requests.get(go_server + environments_api, headers=environment_headers['get'])
+    res = requests.get(environments_api, headers=environment_headers['get'])
     environments = res.json()['_embedded']['environments']
 
     if not os.path.exists('environments'):
@@ -46,7 +46,7 @@ def get_environments():
 
 
 def get_pipeline(environment_path, pipeline_name):
-    res = requests.get(go_server + pipeline_api.format(pipeline_name=pipeline_name), headers=pipeline_headers['get'])
+    res = requests.get(pipelines_api + pipeline_name, headers=pipeline_headers['get'])
     pipeline = res.json()
 
     del pipeline['origin']
@@ -69,7 +69,7 @@ def get_pipeline(environment_path, pipeline_name):
 
 
 def get_templates():
-    res = requests.get(go_server + templates_api, headers=template_headers['get'])
+    res = requests.get(templates_api, headers=template_headers['get'])
     templates = res.json()['_embedded']['templates']
 
     templates_path = 'templates'
@@ -82,7 +82,7 @@ def get_templates():
 
 
 def get_template(templates_path, template_name):
-    res = requests.get(go_server + template_api.format(template_name=template_name), headers=template_headers['get'])
+    res = requests.get(templates_api + template_name, headers=template_headers['get'])
     template = res.json()
 
     del template['_links']

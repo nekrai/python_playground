@@ -3,11 +3,11 @@ import os
 import json
 from get_config import get_environment
 from variables import restore_variables_in
-from constants import go_server, environment_api, environments_api, environment_headers
+from constants import environments_api, environment_headers
 
 
 def get_etag(environment_name):
-    res = requests.get(go_server + environment_api.format(environment_name=environment_name), headers=environment_headers['get'])
+    res = requests.get(environments_api + environment_name, headers=environment_headers['get'])
     if res.status_code != 200:
         raise Exception('Could not get etag for environment ' + environment_name)
 
@@ -15,7 +15,7 @@ def get_etag(environment_name):
 
 
 def get_environment_variables(environment_name):
-    res = requests.get(go_server + environment_api.format(environment_name=environment_name), headers=environment_headers['get'])
+    res = requests.get(environments_api + environment_name, headers=environment_headers['get'])
     if res.status_code != 200:
         raise Exception('Could not get environment ' + environment_name)
 
@@ -59,12 +59,12 @@ def update_environment(environment_name):
 
     validate_etag(environment_name)
 
-    res = requests.patch(go_server + environment_api.format(environment_name=environment_name), data=json.dumps(environment_variables_add), headers=environment_headers['patch'])
+    res = requests.patch(environments_api + environment_name, data=json.dumps(environment_variables_add), headers=environment_headers['patch'])
     if res.status_code == 200:
         print 'Environment {} updated successfully. Refreshing ETag.'.format(environment_name)
         get_environment(environment_path, environment_name)
     else:
-        print res.text
+        print res, res.text
 
 
 def create_environment(environment_name):
@@ -75,20 +75,20 @@ def create_environment(environment_name):
 
     environment = read_and_restore_environment(environment_path, environment_name)
 
-    res = requests.post(go_server + environments_api, data=json.dumps(environment), headers=environment_headers['post'])
+    res = requests.post(environments_api, data=json.dumps(environment), headers=environment_headers['post'])
     if res.status_code == 200:
         print 'Environment {} created successfully. Refreshing ETag.'.format(environment_name)
         get_environment(environment_path, environment_name)
     else:
-        print res.text
+        print res, res.text
 
 
 def delete_environment(environment_name):
-    res = requests.delete(go_server + environment_api.format(environment_name=environment_name), headers=environment_headers['del'])
+    res = requests.delete(environments_api + environment_name, headers=environment_headers['del'])
     if res.status_code == 200:
         print 'Environment {} deleted successfully.'.format(environment_name)
     else:
-        print res.text
+        print res, res.text
 
 
 def add_pipeline_to_environment(environment_name, pipeline_name):
@@ -112,16 +112,17 @@ def _pipeline_operation_in_environment(operation, environment_name, pipeline_nam
         }
     }
 
-    res = requests.patch(go_server + environment_api.format(environment_name=environment_name), data=json.dumps(pipelines_op), headers=environment_headers['patch'])
-    print res
+    res = requests.patch(environments_api + environment_name, data=json.dumps(pipelines_op), headers=environment_headers['patch'])
     if res.status_code == 200:
         print 'Pipeline {pipeline_name} {operation} to environment {environment_name}. Refreshing ETag.'\
             .format(operation=_operations[operation], pipeline_name=pipeline_name, environment_name=environment_name)
         environment_path = os.path.join('environments', environment_name)
         get_environment(environment_path, environment_name)
     else:
-        print res.text
+        print res, res.text
 
 
 if __name__ == '__main__':
     update_environment('ExampleEnv')
+    create_environment('NewEnv')
+    delete_environment('NewEnv')

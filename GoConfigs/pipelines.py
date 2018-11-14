@@ -4,14 +4,14 @@ import json
 
 from get_config import get_pipeline
 from environments import add_pipeline_to_environment, remove_pipeline_from_environment
-from constants import go_server, pipelines_api, pipeline_api, pipeline_headers
+from constants import pipelines_api, pipeline_headers
 from repositories import restore_repositories_in_pipeline
 from variables import restore_variables_in
 from parameters import restore_parameters_in
 
 
 def get_etag(pipeline_name):
-    res = requests.get(go_server + pipeline_api.format(pipeline_name=pipeline_name), headers=pipeline_headers['get'])
+    res = requests.get(pipelines_api + pipeline_name, headers=pipeline_headers['get'])
     if res.status_code != 200:
         raise Exception('Could not get etag for pipeline ' + pipeline_name)
 
@@ -48,7 +48,7 @@ def update_pipeline(environment_name, pipeline_name):
     pipeline = read_and_restore_pipeline(environment_path, pipeline_name)
     pipeline_headers['put']['If-Match'] = validate_etag(environment_path, pipeline_name)
 
-    res = requests.put(go_server + pipeline_api.format(pipeline_name=pipeline_name), data=json.dumps(pipeline), headers=pipeline_headers['put'])
+    res = requests.put(pipelines_api + pipeline_name, data=json.dumps(pipeline), headers=pipeline_headers['put'])
     if res.status_code == 200:
         print 'Pipeline {} updated successfully. Refreshing ETag.'.format(pipeline_name)
         get_pipeline(environment_path, pipeline_name)
@@ -64,7 +64,7 @@ def create_pipeline(environment_name, pipeline_name):
         'pipeline': pipeline
     }
 
-    res = requests.post(go_server + pipelines_api, data=json.dumps(pipeline_group), headers=pipeline_headers['post'])
+    res = requests.post(pipelines_api, data=json.dumps(pipeline_group), headers=pipeline_headers['post'])
     if res.status_code == 200:
         print 'Pipeline {} created successfully. Refreshing ETag.'.format(pipeline_name)
         get_pipeline(environment_path, pipeline_name)
@@ -77,8 +77,7 @@ def create_pipeline(environment_name, pipeline_name):
 def delete_pipeline(environment_name, pipeline_name):
     remove_pipeline_from_environment(environment_name, pipeline_name)
 
-    res = requests.delete(go_server + pipeline_api.format(pipeline_name=pipeline_name), headers=pipeline_headers['del'])
-    print res
+    res = requests.delete(pipelines_api + pipeline_name, headers=pipeline_headers['del'])
     if res.status_code == 200:
         print 'Pipeline {} deleted successfully.'.format(pipeline_name)
     else:
@@ -87,3 +86,6 @@ def delete_pipeline(environment_name, pipeline_name):
 
 if __name__ == '__main__':
     update_pipeline('ExampleEnv', 'Mario')
+    create_pipeline('ExampleEnv', 'Pires')
+    delete_pipeline('ExampleEnv', 'Pires')
+

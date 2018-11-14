@@ -8,14 +8,9 @@ versions = {
     'v6': 'application/vnd.go.cd.v6+json'
 }
 
-environments_api = '/go/api/admin/environments'
-environment_api = environments_api + '/{environment_name}'
-
-pipelines_api = '/go/api/admin/pipelines'
-pipeline_api = pipelines_api + '/{pipeline_name}'
-
-templates_api = '/go/api/admin/templates'
-template_api = templates_api + '/{template_name}'
+environments_api = go_server + '/go/api/admin/environments/'
+pipelines_api = go_server + '/go/api/admin/pipelines/'
+templates_api = go_server + '/go/api/admin/templates/'
 
 
 def _headers(version):
