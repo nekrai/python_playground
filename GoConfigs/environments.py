@@ -37,13 +37,18 @@ def validate_etag(environment_name):
         raise Exception('Local etag is different than server etag')
 
 
-def update_environment(environment_name):
-    environment_path = os.path.join('environments', environment_name)
-
+def read_and_restore_environment(environment_path, environment_name):
     with open(os.path.join(environment_path, environment_name + '.json'), 'r') as environment_file:
         environment = json.load(environment_file)
 
     restore_variables_in(environment)
+
+    return environment
+
+
+def update_environment(environment_name):
+    environment_path = os.path.join('environments', environment_name)
+    environment = read_and_restore_environment(environment_path, environment_name)
 
     environment_variables_add = {
         "environment_variables": {
@@ -68,10 +73,7 @@ def create_environment(environment_name):
     if not os.path.exists(environment_path):
         raise Exception('Environment configuration not found!')
 
-    with open(os.path.join(environment_path, environment_name + '.json'), 'r') as environment_file:
-        environment = json.load(environment_file)
-
-    restore_variables_in(environment)
+    environment = read_and_restore_environment(environment_path, environment_name)
 
     res = requests.post(go_server + environments_api, data=json.dumps(environment), headers=environment_post_headers)
     if res.status_code == 200:
@@ -89,10 +91,6 @@ def delete_environment(environment_name):
         print res.text
 
 
-if __name__ == '__main__':
-    update_environment('ExampleEnv')
-
-
 def add_pipeline_to_environment(environment_name, pipeline_name):
     _pipeline_operation_in_environment('add', environment_name, pipeline_name)
 
@@ -101,12 +99,13 @@ def remove_pipeline_from_environment(environment_name, pipeline_name):
     _pipeline_operation_in_environment('remove', environment_name, pipeline_name)
 
 
-def _pipeline_operation_in_environment(operation, environment_name, pipeline_name):
-    operations = {
-        'add': 'added',
-        'remove': 'removed'
-    }
+_operations = {
+    'add': 'added',
+    'remove': 'removed'
+}
 
+
+def _pipeline_operation_in_environment(operation, environment_name, pipeline_name):
     pipelines_op = {
         "pipelines": {
             operation: [pipeline_name]
@@ -117,8 +116,12 @@ def _pipeline_operation_in_environment(operation, environment_name, pipeline_nam
     print res
     if res.status_code == 200:
         print 'Pipeline {pipeline_name} {operation} to environment {environment_name}. Refreshing ETag.'\
-            .format(operation=operations[operation], pipeline_name=pipeline_name, environment_name=environment_name)
+            .format(operation=_operations[operation], pipeline_name=pipeline_name, environment_name=environment_name)
         environment_path = os.path.join('environments', environment_name)
         get_environment(environment_path, environment_name)
     else:
         print res.text
+
+
+if __name__ == '__main__':
+    update_environment('ExampleEnv')

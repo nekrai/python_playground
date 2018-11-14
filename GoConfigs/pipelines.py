@@ -32,9 +32,7 @@ def validate_etag(environment_path, pipeline_name):
     return etag
 
 
-def update_pipeline(environment_name, pipeline_name):
-    environment_path = os.path.join('environments', environment_name)
-
+def read_and_restore_pipeline(environment_path, pipeline_name):
     with open(os.path.join(environment_path, pipeline_name, pipeline_name + '.json'), 'r') as pipeline_file:
         pipeline = json.load(pipeline_file)
 
@@ -42,27 +40,25 @@ def update_pipeline(environment_name, pipeline_name):
     restore_variables_in(pipeline)
     restore_parameters_in(pipeline)
 
+    return pipeline
+
+
+def update_pipeline(environment_name, pipeline_name):
+    environment_path = os.path.join('environments', environment_name)
+    pipeline = read_and_restore_pipeline(environment_path, pipeline_name)
     pipeline_put_headers['If-Match'] = validate_etag(environment_path, pipeline_name)
 
     res = requests.put(go_server + pipeline_api.format(pipeline_name=pipeline_name), data=json.dumps(pipeline), headers=pipeline_put_headers)
-
     if res.status_code == 200:
         print 'Pipeline {} updated successfully. Refreshing ETag.'.format(pipeline_name)
         get_pipeline(environment_path, pipeline_name)
     else:
-        print res.text
+        print res, res.text
 
 
 def create_pipeline(environment_name, pipeline_name):
     environment_path = os.path.join('environments', environment_name)
-
-    with open(os.path.join(environment_path, pipeline_name, pipeline_name + '.json'), 'r') as pipeline_file:
-        pipeline = json.load(pipeline_file)
-
-    restore_repositories_in_pipeline(pipeline)
-    restore_variables_in(pipeline)
-    restore_parameters_in(pipeline)
-
+    pipeline = read_and_restore_pipeline(environment_path, pipeline_name)
     pipeline_group = {
         'group': environment_name,
         'pipeline': pipeline
@@ -75,7 +71,7 @@ def create_pipeline(environment_name, pipeline_name):
         print 'Adding pipeline {} to environment {}.'.format(pipeline_name, environment_name)
         add_pipeline_to_environment(environment_name, pipeline_name)
     else:
-        print res.text
+        print res, res.text
 
 
 def delete_pipeline(environment_name, pipeline_name):
@@ -86,7 +82,7 @@ def delete_pipeline(environment_name, pipeline_name):
     if res.status_code == 200:
         print 'Pipeline {} deleted successfully.'.format(pipeline_name)
     else:
-        print res.text
+        print res, res.text
 
 
 if __name__ == '__main__':

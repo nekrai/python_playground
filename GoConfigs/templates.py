@@ -28,9 +28,7 @@ def validate_etag(template_name):
     return etag
 
 
-def update_template(template_name):
-    template_path = os.path.join('templates', template_name)
-
+def read_and_restore(template_path, template_name):
     with open(os.path.join(template_path, template_name + '.json'), 'r') as template_file:
         template = json.load(template_file)
 
@@ -40,43 +38,42 @@ def update_template(template_name):
         for job in stage['jobs']:
             restore_variables_in(job)
 
+    return template
+
+
+def update_template(template_name):
+    template_path = os.path.join('templates', template_name)
+    template = read_and_restore(template_path, template_name)
     template_put_headers['If-Match'] = validate_etag(template_name)
+
     res = requests.put(go_server + template_api.format(template_name=template_name), data=json.dumps(template), headers=template_put_headers)
     if res.status_code == 200:
         print 'Template ' + template_name + ' updated successfully. Refreshing ETag.'
         get_template('templates', template_name)
     else:
-        print res.text
+        print res, res.text
 
 
 def create_template(template_name):
     template_path = os.path.join('templates', template_name)
-
-    with open(os.path.join(template_path, template_name + '.json'), 'r') as template_file:
-        template = json.load(template_file)
-
-    for stage in template['stages']:
-        restore_variables_in(stage)
-
-        for job in stage['jobs']:
-            restore_variables_in(job)
+    template = read_and_restore(template_path, template_name)
 
     res = requests.post(go_server + templates_api, data=json.dumps(template), headers=template_post_headers)
     if res.status_code == 200:
         print 'Template ' + template_name + ' created successfully. Refreshing ETag.'
         get_template('templates', template_name)
     else:
-        print res.text
+        print res, res.text
 
 
 def delete_template(template_name):
     res = requests.delete(go_server + template_api.format(template_name=template_name), headers=template_delete_headers)
-    print res
 
     if res.status_code == 200:
         print 'Template ' + template_name + ' deleted successfully.'
     else:
-        print res.text
+        print res, res.text
 
 
-update_template('TempTemp')
+if __name__ == '__main__':
+    update_template('TempTemp')
