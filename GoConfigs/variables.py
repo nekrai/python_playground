@@ -1,7 +1,7 @@
-variables = {
-    "Var1": "pokemon",
-    "Var2": "xuxu"
-}
+import json
+
+with open('variables.json') as v:
+    variables = json.load(v)
 
 
 def replace_variables_in(config):

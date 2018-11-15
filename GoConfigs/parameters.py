@@ -1,7 +1,7 @@
-parameters = {
-    "Par1": "bulbasaur",
-    "Par2": "lolz"
-}
+import json
+
+with open('parameters.json') as p:
+    parameters = json.load(p)
 
 
 def replace_parameters_in(config):

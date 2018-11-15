@@ -1,13 +1,9 @@
-repositories = {
-    'playground': 'https://github.com/nekrai/python_playground.git',
-    'unused': 'https://fake',
-    'svn_party': 'svn://fakesvn.com'
-}
+import json
 
-credentials = {
-    'username': 'Mario',
-    'encrypted_password': 'AES:c2fIk0OAT4SXpz9OQHmykQ==:Qbeoy1NvYvk303J2J1kVtQ=='
-}
+with open('repositories.json') as r:
+    reps = json.load(r)
+    repositories = reps['repositories']
+    credentials = reps['credentials']
 
 
 def replace_repositories_in_pipeline(pipeline):
