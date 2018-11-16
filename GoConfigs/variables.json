@@ -1,4 +1,4 @@
 {
-    "Var1": "pokemon",
-    "Var2": "xuxu"
+    "Var1": ["val1", "val2"],
+    "Var2": ["var3"]
 }

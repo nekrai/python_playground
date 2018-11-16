@@ -1,11 +1,11 @@
 {
     "repositories": {
         "playground": "https://github.com/nekrai/python_playground.git",
-        "unused": "https://fake",
+        "thefake": "https://fake",
         "svn_party": "svn://fakesvn.com"
     },
-    "credentials": {
-        "username": "Mario",
-        "encrypted_password": "AES:c2fIk0OAT4SXpz9OQHmykQ==:Qbeoy1NvYvk303J2J1kVtQ=="
-    }
+    "credentials": [
+        { "Mario": ["one_mario_encrypted_pass", "another_mario_encrypted_pass"] },
+        { "Pires": ["one_pires_encrypted_pass"] }
+    ]
 }

@@ -1,4 +1,4 @@
 {
-    "Par1": "bulbasaur",
-    "Par2": "lolz"
+    "Par1": ["val1", "val2"],
+    "Par2": ["var3"]
 }
